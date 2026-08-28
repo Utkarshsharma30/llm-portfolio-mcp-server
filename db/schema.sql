@@ -17,6 +17,9 @@ CREATE TABLE IF NOT EXISTS pages (
     search_vector tsvector
 );
 
+-- Auto-migrate existing pages table if tier column is missing
+ALTER TABLE pages ADD COLUMN IF NOT EXISTS tier INT DEFAULT 1;
+
 -- 3. Links Table (Stores Bidirectional Graph Edges)
 CREATE TABLE IF NOT EXISTS links (
     id SERIAL PRIMARY KEY,
