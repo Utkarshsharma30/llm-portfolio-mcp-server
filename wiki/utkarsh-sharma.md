@@ -1,3 +1,7 @@
+---
+tier: 1
+---
+
 # Utkarsh Sharma
 
 **Summary**: MCA graduate and AI/ML enthusiast with expertise in Python, data science, and generative AI. Currently interning at Foremark Technology, building intelligent systems and document assistants. Actively seeking entry-level roles in backend development, AI/ML, and data science.

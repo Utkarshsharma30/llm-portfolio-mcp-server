@@ -1,3 +1,7 @@
+---
+tier: 2
+---
+
 # PDF Invoice Data Extraction & Automation
 
 **Summary**: Automated PDF processing pipeline that extracts and structures invoice data from text-based and scanned PDFs using OCR and regex-based parsing.

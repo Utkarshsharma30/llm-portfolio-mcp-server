@@ -1,3 +1,7 @@
+---
+tier: 1
+---
+
 # Education
 
 **Summary**: Academic background of Utkarsh Sharma, including Master of Computer Applications (MCA) from Ajay Kumar Garg Engineering College and Bachelor of Computer Applications (BCA) from Meerut Institute of Technology.

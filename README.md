@@ -3,7 +3,29 @@
 An end-to-end Markdown-based personal wiki with pages, tags, and a bidirectional knowledge graph built following the **Karpathy pattern**:
 `Raw Sources → Structured Wiki → Knowledge Graph (PostgreSQL) → Query Flow (MCP Tools / Claude Connector)`
 
-Exposes `search_wiki`, `get_page`, `get_link_graph`, and `list_pages` MCP tools for AI agents and connected LLMs.
+Features **Tier-Based Access Control** (Tiers 1, 2, 3) across 3 remote MCP servers on Render.
+
+---
+
+## 🔒 Tier-Based Access Control Architecture
+
+The wiki knowledge base is categorized into 3 security tiers:
+
+| Tier Level | Access Boundary Scope | Description & Contents | Example Pages |
+| :--- | :--- | :--- | :--- |
+| **Tier 1** | **Public Portfolio** | High-level profile, core skills, public projects overview, education | `index.md`, `utkarsh-sharma.md`, `projects.md`, `education.md`, `ai-ml.md`, `python.md` |
+| **Tier 2** | **Internal & Operational** | Detailed project specs, internship logs, architecture walkthroughs | `experience.md`, `log.md`, `pdf-invoice-data-extraction-automation.md`, `rag-book-assistant.md`, `markdown-personal-wiki-mcp.md` |
+| **Tier 3** | **Confidential & Raw** | Raw source clippings, internal contact details, raw notes | `raw/Utkarsh Sharma.md`, confidential notes |
+
+---
+
+## 🌐 Remote Render MCP Server Instances
+
+| Server | Render Service URL | Environment Variable | Permitted Data Scope |
+| :--- | :--- | :--- | :--- |
+| **MCP Server 1** | `https://llm-portfolio-mcp1.onrender.com/sse` | `ALLOWED_TIERS=1,2,3` | **All Tiers** (Tier 1 + Tier 2 + Tier 3) |
+| **MCP Server 2** | `https://llm-portfolio-mcp2.onrender.com/sse` | `ALLOWED_TIERS=2,3` | **Tier 2 & Tier 3** Data |
+| **MCP Server 3** | `https://llm-portfolio-mcp3.onrender.com/sse` | `ALLOWED_TIERS=3` | **Tier 3 Only** Data |
 
 ---
 
@@ -16,15 +38,15 @@ Exposes `search_wiki`, `get_page`, `get_link_graph`, and `list_pages` MCP tools 
    - `MCP Tools`: Live query flow for LLMs and custom connectors.
 
 2. **Model Context Protocol (MCP) Tools**:
-   - `search_wiki`: Full-text rank-scored search across titles, summaries, content, and tags.
-   - `get_page`: Retrieve full markdown content, summary, metadata, outgoing links, and incoming backlinks.
-   - `get_link_graph`: Query incoming/outgoing link connections or full knowledge graph topology.
-   - `list_pages`: List all indexed pages filtered by tag or category.
+   - `search_wiki`: Full-text rank-scored search filtered by server tier permissions.
+   - `get_page`: Retrieve full markdown content, summary, metadata, outgoing links, and incoming backlinks for permitted tier pages.
+   - `get_link_graph`: Query incoming/outgoing link connections or full knowledge graph topology restricted to permitted tiers.
+   - `list_pages`: List all indexed pages filtered by tag and server tier level.
 
 3. **Public Cloud Deployment & Live Claude Connector**:
    - Production Express server with Server-Sent Events (`/sse`) transport.
-   - Ready for one-click public deployment on Render (`render.yaml`).
-   - Connects to Claude as a live Custom MCP Connector.
+   - One-click multi-service deployment on Render (`render.yaml`).
+   - Seamless live integration with Claude as Custom MCP Connectors.
 
 ---
 
@@ -32,31 +54,27 @@ Exposes `search_wiki`, `get_page`, `get_link_graph`, and `list_pages` MCP tools 
 
 ```
 llm-portfolio/
-├── raw/                      # Raw source files
-│   ├── Utkarsh Sharma.md
-│   ├── utkarshsharma2002us_RAG-Book-Assistant.md
-│   ├── utkarshsharma2002us_Fun-Chatbot_ chatbot built using Streamlit, LangChain, and Mistral AI..md
-│   ├── utkarshsharma2002us_OLA-Data-Analysis_ Interactive OLA Data Analysis using PowerBi.md
-│   └── utkarshsharma2002us_Traffic-Flow-Prediction_ Analysed historical traffic data to identify congestion patterns and predicts the traffic situations.md
-├── wiki/                     # Structured Markdown wiki pages
-│   ├── index.md              # Master Table of Contents
-│   ├── utkarsh-sharma.md     # Profile summary page
-│   ├── projects.md           # Projects list overview
-│   ├── markdown-personal-wiki-mcp.md # Dedicated project page
-│   ├── rag-book-assistant.md
-│   ├── ai-ml.md
-│   ├── python.md
-│   └── log.md                # Operation log
+├── raw/                      # Raw source files (Tier 3)
+│   └── Utkarsh Sharma.md
+├── wiki/                     # Structured Markdown wiki pages (Tiers 1 & 2)
+│   ├── index.md              # Master Table of Contents (Tier 1)
+│   ├── utkarsh-sharma.md     # Profile summary page (Tier 1)
+│   ├── projects.md           # Projects list overview (Tier 1)
+│   ├── markdown-personal-wiki-mcp.md # Detailed project page (Tier 2)
+│   ├── rag-book-assistant.md (Tier 2)
+│   ├── ai-ml.md (Tier 1)
+│   ├── python.md (Tier 1)
+│   └── log.md                # Operation log (Tier 2)
 ├── db/
-│   └── schema.sql            # PostgreSQL schema with tsvector & graph tables
+│   └── schema.sql            # PostgreSQL schema with tsvector, tier column, & graph tables
 ├── src/
 │   ├── db.js                 # PostgreSQL connection pool & schema bootstrapper
-│   ├── parser.js             # Markdown, tag, & [[wikilink]] graph parser
+│   ├── parser.js             # Markdown, tag, tier & [[wikilink]] parser
 │   ├── indexer.js            # Graph indexer & tsvector generator
-│   ├── mcp-tools.js          # MCP tool implementations (search, lookup, graph)
+│   ├── mcp-tools.js          # Tier-filtered MCP tools (search, lookup, graph)
 │   └── server.js             # Express HTTP/SSE & Stdio MCP server
 ├── Dockerfile                # Docker container configuration
-├── render.yaml               # Render Infrastructure-as-Code blueprint
+├── render.yaml               # Render Infrastructure blueprint (MCP 1, MCP 2, MCP 3)
 ├── package.json              # Dependencies and scripts
 └── .env.example              # Environment variables template
 ```
@@ -75,20 +93,15 @@ npm install
 
 Create a `.env` file from `.env.example`:
 
-```bash
-cp .env.example .env
-```
-
-Set your PostgreSQL connection string (or use JSON fallback mode if running without Postgres):
-
 ```env
 PORT=3000
+ALLOWED_TIERS=1,2,3
 DATABASE_URL=postgres://postgres:postgres@localhost:5432/portfolio_wiki
 ```
 
 ### 3. Run Knowledge Graph Indexer
 
-Scan the `wiki/` directory, parse wikilinks (`[[page-slug]]`), extract tags, and build PostgreSQL tables (or JSON index):
+Scan the `wiki/` and `raw/` directories, parse wikilinks (`[[page-slug]]`), extract tags and tier metadata, and build PostgreSQL tables (or JSON index):
 
 ```bash
 npm run index
@@ -110,26 +123,24 @@ node src/server.js --stdio
 
 ---
 
-## ☁️ Deployment on Render
+## ☁️ Multi-Server Deployment on Render
 
-This repository includes a pre-configured `render.yaml` blueprint.
+This repository includes a pre-configured `render.yaml` blueprint provisioning 3 tier-restricted MCP servers:
 
 1. Connect your GitHub repository to [Render](https://render.com).
 2. Click **New +** -> **Blueprint**.
 3. Select this repository. Render will automatically provision:
-   - A free **PostgreSQL Database** (`portfolio-wiki-db`)
-   - A Node.js **Web Service** (`llm-portfolio-mcp-server`)
-4. Upon deployment, Render automatically builds the project and runs `npm run index` to index the wiki.
+   - Shared **PostgreSQL Database** (`portfolio-wiki-db`)
+   - **MCP Server 1** (`llm-portfolio-mcp1` - `ALLOWED_TIERS=1,2,3`)
+   - **MCP Server 2** (`llm-portfolio-mcp2` - `ALLOWED_TIERS=2,3`)
+   - **MCP Server 3** (`llm-portfolio-mcp3` - `ALLOWED_TIERS=3`)
 
 ---
 
-## 🤖 Connecting to Claude (Live Custom Connector)
+## 🤖 Connecting to Claude (Live Custom Connectors)
 
-Once deployed on Render (e.g. `https://llm-portfolio-mcp-server.onrender.com`), connect it to Claude as a Custom MCP Connector:
+Connect any of the 3 remote MCP servers to Claude as Custom MCP Connectors:
 
-1. Open Claude Custom Connectors settings.
-2. Add a new MCP Server with:
-   - **Name**: `Portfolio Knowledge Graph`
-   - **Transport**: `SSE`
-   - **URL**: `https://llm-portfolio-mcp-server.onrender.com/sse`
-3. Save connection. Claude will automatically discover the exposed tools (`search_wiki`, `get_page`, `get_link_graph`, `list_pages`).
+- **Full Access Connector (MCP 1)**: `https://llm-portfolio-mcp1.onrender.com/sse`
+- **Internal Access Connector (MCP 2)**: `https://llm-portfolio-mcp2.onrender.com/sse`
+- **Confidential Access Connector (MCP 3)**: `https://llm-portfolio-mcp3.onrender.com/sse`

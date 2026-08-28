@@ -1,3 +1,7 @@
+---
+tier: 1
+---
+
 # Projects
 
 **Summary**: Collection of software development and AI/ML projects created by Utkarsh Sharma, showcasing expertise in Python, Java, data science, and generative AI.

@@ -1,3 +1,7 @@
+---
+tier: 1
+---
+
 # Portfolio Wiki - Table of Contents
 
 **Summary**: Master index of all pages in the professional portfolio wiki. Organized by category for easy navigation through Utkarsh Sharma's skills, projects, experience, and education.

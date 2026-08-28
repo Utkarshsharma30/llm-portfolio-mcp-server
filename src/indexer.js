@@ -26,8 +26,9 @@ export async function runIndexer() {
     console.log('⚠️ No DATABASE_URL found. Running in JSON file indexer fallback mode.');
   }
 
-  // Find all .md files in wiki directory
-  const files = await glob('**/*.md', { cwd: WIKI_DIR, absolute: true });
+  // Find all .md files in wiki and raw directories
+  const ROOT_DIR = path.join(__dirname, '..');
+  const files = await glob('{wiki,raw}/**/*.md', { cwd: ROOT_DIR, absolute: true });
   console.log(`📄 Found ${files.length} markdown documents.`);
 
   const parsedPages = [];
@@ -62,16 +63,17 @@ export async function runIndexer() {
         // Upsert pages
         for (const page of parsedPages) {
           await client.query(`
-            INSERT INTO pages (slug, title, summary, content, tags, filepath, updated_at)
-            VALUES ($1, $2, $3, $4, $5, $6, NOW())
+            INSERT INTO pages (slug, title, summary, content, tags, tier, filepath, updated_at)
+            VALUES ($1, $2, $3, $4, $5, $6, $7, NOW())
             ON CONFLICT (slug) DO UPDATE SET
               title = EXCLUDED.title,
               summary = EXCLUDED.summary,
               content = EXCLUDED.content,
               tags = EXCLUDED.tags,
+              tier = EXCLUDED.tier,
               filepath = EXCLUDED.filepath,
               updated_at = NOW()
-          `, [page.slug, page.title, page.summary, page.content, page.tags, page.filepath]);
+          `, [page.slug, page.title, page.summary, page.content, page.tags, page.tier, page.filepath]);
         }
 
         // Clear & Rebuild Links graph table

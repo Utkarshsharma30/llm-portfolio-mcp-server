@@ -1,6 +1,7 @@
 services:
+  # MCP Server 1: All Tiers (Tier 1 + Tier 2 + Tier 3) - Full Access
   - type: web
-    name: llm-portfolio-mcp-server
+    name: llm-portfolio-mcp1
     env: node
     plan: free
     buildCommand: npm install && npm run index
@@ -11,6 +12,54 @@ services:
         value: 10000
       - key: NODE_ENV
         value: production
+      - key: SERVER_NAME
+        value: llm-portfolio-mcp1
+      - key: ALLOWED_TIERS
+        value: "1,2,3"
+      - key: DATABASE_URL
+        fromDatabase:
+          name: portfolio-wiki-db
+          property: connectionString
+
+  # MCP Server 2: Tier 2 & Tier 3 Data Only
+  - type: web
+    name: llm-portfolio-mcp2
+    env: node
+    plan: free
+    buildCommand: npm install && npm run index
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: PORT
+        value: 10000
+      - key: NODE_ENV
+        value: production
+      - key: SERVER_NAME
+        value: llm-portfolio-mcp2
+      - key: ALLOWED_TIERS
+        value: "2,3"
+      - key: DATABASE_URL
+        fromDatabase:
+          name: portfolio-wiki-db
+          property: connectionString
+
+  # MCP Server 3: Tier 3 Data Only (Confidential / Sensitive Data Only)
+  - type: web
+    name: llm-portfolio-mcp3
+    env: node
+    plan: free
+    buildCommand: npm install && npm run index
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: PORT
+        value: 10000
+      - key: NODE_ENV
+        value: production
+      - key: SERVER_NAME
+        value: llm-portfolio-mcp3
+      - key: ALLOWED_TIERS
+        value: "3"
       - key: DATABASE_URL
         fromDatabase:
           name: portfolio-wiki-db

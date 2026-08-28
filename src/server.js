@@ -9,13 +9,14 @@ import {
   ListToolsRequestSchema,
 } from '@modelcontextprotocol/sdk/types.js';
 
-import { searchWiki, getPage, getLinkGraph, listPages } from './mcp-tools.js';
+import { searchWiki, getPage, getLinkGraph, listPages, getAllowedTiers } from './mcp-tools.js';
 import { runIndexer } from './indexer.js';
 import db from './db.js';
 
 dotenv.config();
 
 const PORT = process.env.PORT || 3000;
+const SERVER_NAME = process.env.SERVER_NAME || 'llm-portfolio-mcp-server';
 
 /**
  * Configure MCP Server Instance
@@ -194,9 +195,10 @@ async function startHttpServer() {
       return handleSseConnection(req, res);
     }
     res.status(200).json({
-      service: 'llm-portfolio-mcp-server',
+      service: SERVER_NAME,
       status: 'active',
       mcp_version: '1.0',
+      allowed_tiers: getAllowedTiers(),
       authentication: { required: false, type: 'none' },
       mcp_sse_endpoint: '/sse',
       health_check: '/health'
@@ -219,6 +221,7 @@ async function startHttpServer() {
       authentication_required: false,
       authentication: { type: 'none' },
       issuer: baseUrl,
+      allowed_tiers: getAllowedTiers(),
       sse_endpoint: `${baseUrl}/sse`,
       messages_endpoint: `${baseUrl}/messages`
     });
@@ -259,7 +262,8 @@ async function startHttpServer() {
   app.get('/health', (req, res) => {
     res.status(200).json({
       status: 'ok',
-      service: 'llm-portfolio-mcp-server',
+      service: SERVER_NAME,
+      allowed_tiers: getAllowedTiers(),
       database: Boolean(db.pool) ? 'connected' : 'fallback-mode',
       timestamp: new Date().toISOString(),
     });

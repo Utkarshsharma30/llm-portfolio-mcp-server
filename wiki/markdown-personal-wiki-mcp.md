@@ -1,3 +1,7 @@
+---
+tier: 2
+---
+
 # Markdown Personal Wiki & Knowledge Graph MCP Server
 
 **Summary**: Markdown-based personal wiki with bidirectional knowledge graph, PostgreSQL indexing, and Node.js MCP server deployed on Render and connected to Claude as a live custom connector.

@@ -1,3 +1,7 @@
+---
+tier: 1
+---
+
 # AI/ML
 
 **Summary**: Artificial Intelligence and Machine Learning domain covering large language models, retrieval-augmented generation, prompt engineering, and related technologies.

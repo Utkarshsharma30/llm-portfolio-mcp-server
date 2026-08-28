@@ -1,3 +1,7 @@
+---
+tier: 2
+---
+
 # Portfolio Wiki - Operation Log
 
 **Summary**: Append-only record of all operations performed on the professional portfolio wiki. Lists dates, sources, pages created, and changes made.

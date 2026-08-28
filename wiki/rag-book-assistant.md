@@ -1,3 +1,7 @@
+---
+tier: 2
+---
+
 # RAG Book Assistant
 
 **Summary**: Intelligent Retrieval-Augmented Generation application that enables natural language Q&A over PDF documents using semantic search, vector embeddings, and LLMs. Built with Streamlit, LangChain, Mistral AI, and Chroma DB.

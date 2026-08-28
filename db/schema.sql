@@ -11,6 +11,7 @@ CREATE TABLE IF NOT EXISTS pages (
     summary TEXT,
     content TEXT NOT NULL,
     tags TEXT[] DEFAULT '{}',
+    tier INT DEFAULT 1,
     filepath VARCHAR(512),
     updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
     search_vector tsvector
@@ -27,6 +28,7 @@ CREATE TABLE IF NOT EXISTS links (
 
 -- 4. Indexes for Performance & Search
 CREATE INDEX IF NOT EXISTS idx_pages_slug ON pages(slug);
+CREATE INDEX IF NOT EXISTS idx_pages_tier ON pages(tier);
 CREATE INDEX IF NOT EXISTS idx_pages_tags ON pages USING GIN (tags);
 CREATE INDEX IF NOT EXISTS idx_pages_search_vector ON pages USING GIN (search_vector);
 

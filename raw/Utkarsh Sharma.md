@@ -5,6 +5,7 @@ author:
 published:
 created: 2026-08-26
 description:
+tier: 3
 tags:
   - "clippings"
 ---

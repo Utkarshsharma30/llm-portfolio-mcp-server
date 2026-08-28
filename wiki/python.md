@@ -1,3 +1,7 @@
+---
+tier: 1
+---
+
 # Python
 
 **Summary**: High-level, interpreted programming language known for its readability, versatility, and extensive library ecosystem. A primary language for AI/ML, data science, web development, and automation.
