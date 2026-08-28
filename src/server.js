@@ -152,11 +152,12 @@ function createMcpServer() {
 async function startHttpServer() {
   const app = express();
 
-  // Enable full CORS for cross-origin requests from Claude / web clients
+  // Enable permissive CORS for cross-origin requests from Claude / web clients
   app.use(cors({
     origin: '*',
-    methods: ['GET', 'POST', 'OPTIONS', 'DELETE', 'PUT'],
-    allowedHeaders: ['Content-Type', 'Authorization', 'x-mcp-session-id', '*'],
+    methods: ['GET', 'POST', 'OPTIONS', 'DELETE', 'PUT', 'HEAD'],
+    allowedHeaders: ['Content-Type', 'Authorization', 'x-mcp-session-id', 'Accept', 'Origin', '*'],
+    credentials: true,
   }));
 
   app.use(express.json());
@@ -171,86 +172,9 @@ async function startHttpServer() {
     return `${proto}://${host}`;
   };
 
-  // Root endpoint info & SSE redirect fallback
-  app.get('/', (req, res) => {
-    res.json({
-      service: 'llm-portfolio-mcp-server',
-      status: 'active',
-      mcp_sse_endpoint: '/sse',
-      health_check: '/health',
-      auth: 'supported'
-    });
-  });
-
-  // OAuth 2.0 Discovery Endpoints (RFC 8414 & RFC 9728) for seamless Claude Custom Connector registration
-  app.get(['/.well-known/oauth-authorization-server', '/.well-known/openid-configuration', '/.well-known/mcp-configuration'], (req, res) => {
-    const baseUrl = getBaseUrl(req);
-    res.json({
-      issuer: baseUrl,
-      authorization_endpoint: `${baseUrl}/oauth/authorize`,
-      token_endpoint: `${baseUrl}/oauth/token`,
-      registration_endpoint: `${baseUrl}/oauth/register`,
-      scopes_supported: ['mcp'],
-      response_types_supported: ['code'],
-      grant_types_supported: ['authorization_code', 'client_credentials'],
-      token_endpoint_auth_methods_supported: ['none', 'client_secret_post']
-    });
-  });
-
-  // Dynamic Client Registration (RFC 7591)
-  app.post(['/oauth/register', '/register'], (req, res) => {
-    res.status(201).json({
-      client_id: 'llm_portfolio_mcp_client',
-      client_secret: 'llm_portfolio_mcp_secret',
-      client_id_issued_at: Math.floor(Date.now() / 1000),
-      client_secret_expires_at: 0
-    });
-  });
-
-  // OAuth Authorization Endpoint (Auto-approves and redirects back to Claude)
-  app.get(['/oauth/authorize', '/authorize'], (req, res) => {
-    const { redirect_uri, state } = req.query;
-    if (redirect_uri) {
-      const targetUrl = new URL(String(redirect_uri));
-      targetUrl.searchParams.set('code', 'mcp_auth_code_success');
-      if (state) targetUrl.searchParams.set('state', String(state));
-      return res.redirect(targetUrl.toString());
-    }
-    res.send('Authorization granted for LLM Portfolio MCP Server.');
-  });
-
-  // OAuth Token Endpoint
-  app.post(['/oauth/token', '/token'], (req, res) => {
-    res.json({
-      access_token: 'mcp_access_token_valid',
-      token_type: 'Bearer',
-      expires_in: 86400
-    });
-  });
-
-  // Health check endpoint for Render monitoring
-  app.get('/health', (req, res) => {
-    res.json({
-      status: 'ok',
-      service: 'llm-portfolio-mcp-server',
-      database: Boolean(db.pool) ? 'connected' : 'fallback-mode',
-      timestamp: new Date().toISOString(),
-    });
-  });
-
-  // Re-indexing trigger endpoint
-  app.post('/api/index', async (req, res) => {
-    try {
-      await runIndexer();
-      res.json({ success: true, message: 'Wiki re-indexing complete.' });
-    } catch (err) {
-      res.status(500).json({ success: false, error: err.message });
-    }
-  });
-
-  // SSE endpoint for Claude Custom Connector & MCP Clients
-  app.get('/sse', async (req, res) => {
-    console.log('🔗 New SSE client connection request');
+  // Helper handler for SSE connections
+  const handleSseConnection = async (req, res) => {
+    console.log(`🔗 New SSE connection request from ${req.ip} on ${req.path}`);
     const mcpServer = createMcpServer();
     const transport = new SSEServerTransport('/messages', res);
     
@@ -262,9 +186,96 @@ async function startHttpServer() {
     };
 
     await mcpServer.connect(transport);
+  };
+
+  // Root endpoint: Handles SSE if requested by client, otherwise returns 200 OK JSON status
+  app.get('/', async (req, res) => {
+    if (req.headers.accept && req.headers.accept.includes('text/event-stream')) {
+      return handleSseConnection(req, res);
+    }
+    res.status(200).json({
+      service: 'llm-portfolio-mcp-server',
+      status: 'active',
+      mcp_version: '1.0',
+      authentication: { required: false, type: 'none' },
+      mcp_sse_endpoint: '/sse',
+      health_check: '/health'
+    });
   });
 
-  // Messages endpoint for client-to-server requests
+  // Dedicated SSE endpoint
+  app.get('/sse', handleSseConnection);
+
+  // MCP & OAuth Discovery Endpoints: Return 200 OK confirming NO sign-in is required
+  app.get([
+    '/.well-known/mcp-configuration',
+    '/.well-known/mcp.json',
+    '/.well-known/oauth-authorization-server',
+    '/.well-known/openid-configuration'
+  ], (req, res) => {
+    const baseUrl = getBaseUrl(req);
+    res.status(200).json({
+      mcp_version: '1.0',
+      authentication_required: false,
+      authentication: { type: 'none' },
+      issuer: baseUrl,
+      sse_endpoint: `${baseUrl}/sse`,
+      messages_endpoint: `${baseUrl}/messages`
+    });
+  });
+
+  // Dynamic Client Registration (RFC 7591) fallback
+  app.post(['/oauth/register', '/register'], (req, res) => {
+    res.status(200).json({
+      client_id: 'llm_portfolio_mcp_client',
+      client_secret: 'llm_portfolio_mcp_secret',
+      client_id_issued_at: Math.floor(Date.now() / 1000),
+      client_secret_expires_at: 0
+    });
+  });
+
+  // OAuth Authorization endpoint fallback (Instant redirect)
+  app.get(['/oauth/authorize', '/authorize'], (req, res) => {
+    const { redirect_uri, state } = req.query;
+    if (redirect_uri) {
+      const targetUrl = new URL(String(redirect_uri));
+      targetUrl.searchParams.set('code', 'mcp_auth_code_success');
+      if (state) targetUrl.searchParams.set('state', String(state));
+      return res.redirect(targetUrl.toString());
+    }
+    res.status(200).send('Authorization granted for LLM Portfolio MCP Server.');
+  });
+
+  // OAuth Token Endpoint fallback
+  app.post(['/oauth/token', '/token'], (req, res) => {
+    res.status(200).json({
+      access_token: 'mcp_access_token_valid',
+      token_type: 'Bearer',
+      expires_in: 86400
+    });
+  });
+
+  // Health check endpoint for Render monitoring
+  app.get('/health', (req, res) => {
+    res.status(200).json({
+      status: 'ok',
+      service: 'llm-portfolio-mcp-server',
+      database: Boolean(db.pool) ? 'connected' : 'fallback-mode',
+      timestamp: new Date().toISOString(),
+    });
+  });
+
+  // Re-indexing trigger endpoint
+  app.post('/api/index', async (req, res) => {
+    try {
+      await runIndexer();
+      res.status(200).json({ success: true, message: 'Wiki re-indexing complete.' });
+    } catch (err) {
+      res.status(500).json({ success: false, error: err.message });
+    }
+  });
+
+  // Messages endpoint for client-to-server JSON-RPC requests
   app.post('/messages', async (req, res) => {
     const sessionId = req.query.sessionId;
     let transport = transports.get(sessionId);
