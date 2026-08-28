@@ -1,21 +1,19 @@
-# Markdown Personal Portfolio Wiki & Knowledge Graph MCP Server
+# Markdown Travel Wiki & Knowledge Graph MCP Server
 
-An end-to-end Markdown-based personal wiki with pages, tags, and a bidirectional knowledge graph built following the **Karpathy pattern**:
-`Raw Sources → Structured Wiki → Knowledge Graph (PostgreSQL) → Query Flow (MCP Tools / Claude Connector)`
+An end-to-end Markdown-based travel knowledge wiki with pages, tags, and a bidirectional knowledge graph built following the **Karpathy pattern**:
+`Raw Sources (Wikivoyage / Travel Clippings) → Structured Wiki → Knowledge Graph (PostgreSQL) → Query Flow (MCP Tools / Claude Connector)`
 
 Features **Progressive Tier-Based Access Control** (Tiers 1, 2, 3) across 3 remote MCP servers on Render.
 
 ---
 
-## 🔒 Progressive Tier Access Boundaries
+## 🔒 Travel Data Tier Boundaries
 
-The wiki knowledge base is structured into 3 progressive access tiers:
-
-| Tier Level | Access Boundary Scope | Description & Contents | Example Pages |
+| Tier Level | Access Scope | Description & Contents | Example Pages |
 | :--- | :--- | :--- | :--- |
-| **Tier 1** | **Project Details Only** | Project descriptions, tech stacks, OCR automation, RAG book assistant | `projects.md`, `rag-book-assistant.md`, `markdown-personal-wiki-mcp.md`, `pdf-invoice...`, `ola-data...` |
-| **Tier 2** | **Tier 1 + Skills & Introduction** | Profile overview, core skills (AI/ML, Python, Data Science), education | `utkarsh-sharma.md`, `ai-ml.md`, `python.md`, `data-science.md`, `education.md`, `index.md` |
-| **Tier 3** | **Tier 1 + Tier 2 + Personal & Contact Details** | Work experience, internship logs, contact information, raw source notes | `experience.md`, `log.md`, `raw/Utkarsh Sharma.md` |
+| **Tier 1** | **Regional Overview & Index** | Regional breakdown, country overview, table of contents, quick start guide | `India.md`, `South Asia.md`, `README.md`, `Quick Start.md` |
+| **Tier 2** | **Tier 1 + Detailed Destination Guides** | Full travel guides, top attractions, metro transit, hotel recommendations | `Delhi.md` (Top 25 attractions), `Manali.md` (Hill station & adventure) |
+| **Tier 3** | **Tier 1 + Tier 2 + Raw Sources & Clippings** | Full raw Wikivoyage travel guides, Mark Wiens clippings, community guides | `raw/25 Incredible Things To Do In Delhi...`, `raw/Travellers' guide to India...` |
 
 ---
 
@@ -23,25 +21,25 @@ The wiki knowledge base is structured into 3 progressive access tiers:
 
 | Server | Render Service URL | Environment Variable | Permitted Data Scope |
 | :--- | :--- | :--- | :--- |
-| **MCP Server 1** | `https://llm-portfolio-mcp1.onrender.com/sse` | `ALLOWED_TIERS=1` | **Project Details Only** (Tier 1) |
-| **MCP Server 2** | `https://llm-portfolio-mcp2.onrender.com/sse` | `ALLOWED_TIERS=1,2` | **Projects + Skills & Introduction** (Tiers 1 & 2) |
-| **MCP Server 3** | `https://llm-portfolio-mcp3.onrender.com/sse` | `ALLOWED_TIERS=1,2,3` | **Full Access** (Projects + Skills + Personal & Contact Details) |
+| **MCP Server 1** | `https://llm-portfolio-mcp1.onrender.com/sse` | `ALLOWED_TIERS=1` | **Travel Overview & Regions Only** (Tier 1) |
+| **MCP Server 2** | `https://llm-portfolio-mcp2.onrender.com/sse` | `ALLOWED_TIERS=1,2` | **Overview + Detailed Destination Guides** (Delhi & Manali) |
+| **MCP Server 3** | `https://llm-portfolio-mcp3.onrender.com/sse` | `ALLOWED_TIERS=1,2,3` | **Full Travel Access** (Overview + Guides + Raw Wikivoyage Sources) |
 
 ---
 
 ## 🌟 Key Features
 
 1. **Karpathy Ingestion Pattern**:
-   - `raw/`: Unstructured source document clippings (`Utkarsh Sharma.md`).
-   - `wiki/`: Structured, cross-referenced Markdown concept and project pages.
+   - `raw/`: Unstructured travel source document clippings (`25 Incredible Things To Do In Delhi`, `Travellers' guide to India`, `Wikivoyage`).
+   - `wiki/`: Structured, cross-referenced Markdown travel pages (`India`, `South Asia`, `Delhi`, `Manali`).
    - `PostgreSQL / JSON Index`: Automated relational full-text search (`tsvector`) and bidirectional graph edge table.
-   - `MCP Tools`: Live query flow for LLMs and custom connectors.
+   - `MCP Tools`: Live query flow for LLMs and custom connectors (`search_wiki`, `get_page`, `get_link_graph`, `list_pages`).
 
 2. **Model Context Protocol (MCP) Tools**:
    - `search_wiki`: Full-text rank-scored search filtered by server tier permissions.
-   - `get_page`: Retrieve full markdown content, summary, metadata, outgoing links, and incoming backlinks for permitted tier pages.
-   - `get_link_graph`: Query incoming/outgoing link connections or full knowledge graph topology restricted to permitted tiers.
-   - `list_pages`: List all indexed pages filtered by tag and server tier level.
+   - `get_page`: Retrieve full markdown content, summary, metadata, outgoing links, and incoming backlinks for permitted travel pages.
+   - `get_link_graph`: Query incoming/outgoing travel link connections or full destination graph topology restricted to permitted tiers.
+   - `list_pages`: List all indexed travel pages filtered by tag and server tier level.
 
 3. **Public Cloud Deployment & Live Claude Connectors**:
    - Production Express server with Server-Sent Events (`/sse`) transport.
@@ -54,20 +52,20 @@ The wiki knowledge base is structured into 3 progressive access tiers:
 
 ```
 llm-portfolio/
-├── raw/                      # Raw source files (Tier 3)
-│   └── Utkarsh Sharma.md
-├── wiki/                     # Structured Markdown wiki pages (Tiers 1, 2, 3)
-│   ├── projects.md           # Projects list overview (Tier 1)
-│   ├── markdown-personal-wiki-mcp.md # Dedicated project page (Tier 1)
-│   ├── rag-book-assistant.md (Tier 1)
-│   ├── pdf-invoice-data-extraction-automation.md (Tier 1)
-│   ├── utkarsh-sharma.md     # Profile summary page (Tier 2)
-│   ├── ai-ml.md (Tier 2)
-│   ├── python.md (Tier 2)
-│   ├── data-science.md (Tier 2)
-│   ├── education.md (Tier 2)
-│   ├── experience.md (Tier 3)
-│   └── log.md                # Operation log (Tier 3)
+├── raw/                      # Raw source travel documents (Tier 3)
+│   ├── 25 Incredible Things To Do In Delhi, India.md
+│   ├── An Indian’s Guide to Japan.md
+│   ├── Asia – Travel guide at Wikivoyage.md
+│   ├── South Asia – Travel guide at Wikivoyage.md
+│   ├── Top Places To Visit In Manali.md
+│   └── Travellers' guide to India.md
+├── wiki/                     # Structured Markdown travel wiki pages (Tiers 1 & 2)
+│   ├── India.md              # Regional breakdown & country guide (Tier 1)
+│   ├── South Asia.md         # Subcontinent regional overview (Tier 1)
+│   ├── Quick Start.md        # Getting started guide (Tier 1)
+│   ├── README.md             # Master Table of Contents (Tier 1)
+│   ├── Delhi.md              # Capital city travel guide & top 25 attractions (Tier 2)
+│   └── Manali.md             # Hill station & adventure guide (Tier 2)
 ├── db/
 │   └── schema.sql            # PostgreSQL schema with tsvector, tier column, & graph tables
 ├── src/
@@ -94,7 +92,7 @@ npm install
 
 ### 2. Configure Environment Variables
 
-Create a `.env` file from `.env.example`:
+Create a `.env` file:
 
 ```env
 PORT=3000
@@ -104,46 +102,20 @@ DATABASE_URL=postgres://postgres:postgres@localhost:5432/portfolio_wiki
 
 ### 3. Run Knowledge Graph Indexer
 
-Scan `wiki/` and `raw/` directories, parse wikilinks (`[[page-slug]]`), extract tags and tier metadata, and build PostgreSQL tables (or JSON index):
-
 ```bash
 npm run index
 ```
 
 ### 4. Start MCP Server
 
-Start the server in HTTP/SSE mode:
-
 ```bash
 npm start
 ```
-
-For CLI/Stdio mode:
-
-```bash
-node src/server.js --stdio
-```
-
----
-
-## ☁️ Multi-Server Deployment on Render
-
-This repository includes a pre-configured `render.yaml` blueprint provisioning 3 tier-restricted MCP servers:
-
-1. Connect your GitHub repository to [Render](https://render.com).
-2. Click **New +** -> **Blueprint**.
-3. Select this repository. Render will automatically provision:
-   - Shared **PostgreSQL Database** (`portfolio-wiki-db`)
-   - **MCP Server 1** (`llm-portfolio-mcp1` - `ALLOWED_TIERS=1`: Project Details Only)
-   - **MCP Server 2** (`llm-portfolio-mcp2` - `ALLOWED_TIERS=1,2`: Projects + Skills & Intro)
-   - **MCP Server 3** (`llm-portfolio-mcp3` - `ALLOWED_TIERS=1,2,3`: Projects + Skills + Personal/Contact Details)
 
 ---
 
 ## 🤖 Connecting to Claude (Live Custom Connectors)
 
-Connect any of the 3 remote MCP servers to Claude as Custom MCP Connectors:
-
-- **Public Projects Connector (MCP 1)**: `https://llm-portfolio-mcp1.onrender.com/sse`
-- **Internal Skills & Intro Connector (MCP 2)**: `https://llm-portfolio-mcp2.onrender.com/sse`
-- **Full Personal & Contact Connector (MCP 3)**: `https://llm-portfolio-mcp3.onrender.com/sse`
+- **Travel Overview Connector (MCP 1)**: `https://llm-portfolio-mcp1.onrender.com/sse`
+- **Destination Guides Connector (MCP 2)**: `https://llm-portfolio-mcp2.onrender.com/sse`
+- **Full Travel & Raw Sources Connector (MCP 3)**: `https://llm-portfolio-mcp3.onrender.com/sse`

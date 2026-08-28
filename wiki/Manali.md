@@ -1,3 +1,7 @@
+---
+tier: 2
+---
+
 # Manali
 
 **Manali** is a popular hill station and tourist destination in Himachal Pradesh, India. Located in the northern part of the country at the edge of the Himalayas, Manali is often called the "second home" by frequent visitors, especially those from Delhi and Chandigarh.

@@ -1,3 +1,7 @@
+---
+tier: 1
+---
+
 # Quick Start
 
 ## Newly Added Content

@@ -1,3 +1,7 @@
+---
+tier: 1
+---
+
 # India Travel Wiki
 
 Welcome to the India Travel Wiki - your comprehensive guide to traveling in India and South Asia.

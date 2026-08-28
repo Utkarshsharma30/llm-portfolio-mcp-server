@@ -1,3 +1,7 @@
+---
+tier: 1
+---
+
 # LLM Wiki - Travel Guide
 
 Welcome to the LLM Wiki, a collection of travel guides and information curated from various sources.

@@ -1,3 +1,7 @@
+---
+tier: 2
+---
+
 # Delhi
 
 **Delhi** is the capital city of India and one of the oldest continuously inhabited cities in the world. With a history spanning over 5,000 years, Delhi offers an overwhelming amount of history, culture, life, food, temples, and everything else you could possibly imagine.

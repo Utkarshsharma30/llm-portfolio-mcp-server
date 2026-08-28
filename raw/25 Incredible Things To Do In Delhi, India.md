@@ -6,6 +6,7 @@ author:
 published: 2013-04-09
 created: 2026-08-28
 description: "Delhi, India, is an incredible city that offers something for everything. Here are 25 things to do in Delhi that you'll love!"
+tier: 3
 tags:
   - "clippings"
 ---

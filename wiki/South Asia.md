@@ -1,3 +1,7 @@
+---
+tier: 1
+---
+
 # South Asia
 
 **South Asia**, also known as the **Indian subcontinent** (or "the subcontinent"), is a triangular landmass bordered by the Himalayas in the north, the Indian Ocean in the south, and the Ganges and Indus river valleys in east and west.
