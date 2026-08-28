@@ -8,6 +8,62 @@
 
 ## 2026-08-28
 
+### Source Ingestion: Dedicated Project Source Files
+
+**Sources**: 
+- raw/utkarshsharma2002us_RAG-Book-Assistant.md
+- raw/utkarshsharma2002us_Fun-Chatbot_ chatbot built using Streamlit, LangChain, and Mistral AI..md
+- raw/utkarshsharma2002us_OLA-Data-Analysis_ Interactive OLA Data Analysis using PowerBi.md
+- raw/utkarshsharma2002us_Traffic-Flow-Prediction_ Analysed historical traffic data to identify congestion patterns and predicts the traffic situations.md
+**Added to raw/**: 2026-08-28 18:38
+**Ingested**: 2026-08-28 18:45
+
+#### Pages Updated
+- [wiki/rag-book-assistant.md](rag-book-assistant.md) - Added new source reference
+- [wiki/fun-chat-bot.md](fun-chat-bot.md) - Added new source reference
+- [wiki/ola-data-analysis.md](ola-data-analysis.md) - Added new source reference
+- [wiki/traffic-flow-prediction.md](traffic-flow-prediction.md) - Added new source reference
+- [wiki/projects.md](projects.md) - Added new source references
+- [wiki/index.md](index.md) - Updated source documents list and statistics
+
+#### Key Statistics
+- **New Source Documents**: 4 (dedicated project files)
+- **Total Source Documents**: 5 (Utkarsh Sharma.md + 4 project files)
+
+---
+
+### Source Ingestion: RAG Book Assistant Dedicated Source
+
+**Source**: raw/utkarshsharma2002us_RAG-Book-Assistant.md
+**Originally added to**: Clippings/utkarshsharma2002usRAG-Book-Assistant.md
+**Moved to raw/**: 2026-08-28 19:38
+**Ingested**: 2026-08-28 19:40
+
+#### Pages Updated
+- [wiki/rag-book-assistant.md](rag-book-assistant.md) - Enhanced with detailed technical information, features, setup instructions, usage guide, tech stack breakdown, project structure, limitations, and future improvements from dedicated source
+- [wiki/index.md](index.md) - Updated last modified date
+- [wiki/log.md](log.md) - This entry
+
+#### Content Added
+- Comprehensive feature list with icons
+- Detailed technical stack (Frontend, LLM, Data, Language)
+- Step-by-step workflow explanation
+- Complete project structure tree
+- Full setup instructions (clone, venv, dependencies, env, run)
+- Usage steps
+- Example use cases
+- Limitations section
+- Future improvements roadmap
+- Screenshots reference
+- License information
+- Enhanced source citations
+
+#### Key Statistics
+- **Total Source Documents**: 2 (Utkarsh Sharma.md + 1 dedicated RAG project file)
+- **Pages Enhanced**: 1 (rag-book-assistant.md)
+
+---
+
 ### Source Ingestion: Markdown Personal Wiki & Knowledge Graph MCP Server Project
 
 **Source**: raw/Utkarsh Sharma.md

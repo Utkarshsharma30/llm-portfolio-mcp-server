@@ -2,7 +2,7 @@
 
 **Summary**: Master index of all pages in the professional portfolio wiki. Organized by category for easy navigation through Utkarsh Sharma's skills, projects, experience, and education.
 
-**Sources**: All pages are derived from raw/Utkarsh Sharma.md unless otherwise noted.
+**Sources**: All pages are derived from raw/Utkarsh Sharma.md and dedicated project source files (including raw/utkarshsharma2002us_RAG-Book-Assistant.md).
 
 **Last updated**: 2026-08-28
 
@@ -15,6 +15,10 @@ This wiki contains information extracted from the source document "Utkarsh Sharm
 ## Source Documents
 
 - **[Utkarsh Sharma](utkarsh-sharma.md)** - Primary source document in raw/ folder
+- **utkarshsharma2002us/RAG-Book-Assistant** - Dedicated source for RAG project
+- **utkarshsharma2002us/Fun-Chatbot** - Dedicated source for chatbot project
+- **utkarshsharma2002us/OLA-Data-Analysis** - Dedicated source for OLA analysis project
+- **utkarshsharma2002us/Traffic-Flow-Prediction** - Dedicated source for traffic prediction project
 
 ## Main Pages
 
@@ -112,7 +116,7 @@ This wiki contains information extracted from the source document "Utkarsh Sharm
 ## Statistics
 
 - **Total Pages**: 15 (excluding this index and log)
-- **Source Documents**: 1 (Utkarsh Sharma.md)
+- **Source Documents**: 5 (Utkarsh Sharma.md + 4 dedicated project files)
 - **Projects**: 7
 - **Experience Entries**: 4
 - **Education Programs**: 2

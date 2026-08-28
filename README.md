@@ -10,7 +10,7 @@ Exposes `search_wiki`, `get_page`, `get_link_graph`, and `list_pages` MCP tools 
 ## 🌟 Key Features
 
 1. **Karpathy Ingestion Pattern**:
-   - `raw/`: Unstructured source document clippings (`Utkarsh Sharma.md`).
+   - `raw/`: Unstructured source document clippings (`Utkarsh Sharma.md` + dedicated project files).
    - `wiki/`: Structured, cross-referenced Markdown concept and project pages.
    - `PostgreSQL / JSON Index`: Automated relational full-text search (`tsvector`) and bidirectional graph edge table.
    - `MCP Tools`: Live query flow for LLMs and custom connectors.
@@ -33,7 +33,11 @@ Exposes `search_wiki`, `get_page`, `get_link_graph`, and `list_pages` MCP tools 
 ```
 llm-portfolio/
 ├── raw/                      # Raw source files
-│   └── Utkarsh Sharma.md
+│   ├── Utkarsh Sharma.md
+│   ├── utkarshsharma2002us_RAG-Book-Assistant.md
+│   ├── utkarshsharma2002us_Fun-Chatbot_ chatbot built using Streamlit, LangChain, and Mistral AI..md
+│   ├── utkarshsharma2002us_OLA-Data-Analysis_ Interactive OLA Data Analysis using PowerBi.md
+│   └── utkarshsharma2002us_Traffic-Flow-Prediction_ Analysed historical traffic data to identify congestion patterns and predicts the traffic situations.md
 ├── wiki/                     # Structured Markdown wiki pages
 │   ├── index.md              # Master Table of Contents
 │   ├── utkarsh-sharma.md     # Profile summary page

@@ -4,6 +4,10 @@
 
 **Sources**:
 - raw/Utkarsh Sharma.md
+- raw/utkarshsharma2002us_RAG-Book-Assistant.md
+- raw/utkarshsharma2002us_Fun-Chatbot_ chatbot built using Streamlit, LangChain, and Mistral AI..md
+- raw/utkarshsharma2002us_OLA-Data-Analysis_ Interactive OLA Data Analysis using PowerBi.md
+- raw/utkarshsharma2002us_Traffic-Flow-Prediction_ Analysed historical traffic data to identify congestion patterns and predicts the traffic situations.md
 
 **Last updated**: 2026-08-28
 
