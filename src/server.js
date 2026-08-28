@@ -1,4 +1,5 @@
 import express from 'express';
+import cors from 'cors';
 import dotenv from 'dotenv';
 import { Server } from '@modelcontextprotocol/sdk/server/index.js';
 import { SSEServerTransport } from '@modelcontextprotocol/sdk/server/sse.js';
@@ -150,7 +151,34 @@ function createMcpServer() {
  */
 async function startHttpServer() {
   const app = express();
+
+  // Enable full CORS for cross-origin requests from Claude / web clients
+  app.use(cors({
+    origin: '*',
+    methods: ['GET', 'POST', 'OPTIONS', 'DELETE', 'PUT'],
+    allowedHeaders: ['Content-Type', 'Authorization', 'x-mcp-session-id', '*'],
+  }));
+
   app.use(express.json());
+
+  // Store active SSE transports by sessionId
+  const transports = new Map();
+
+  // Root endpoint info & SSE redirect fallback
+  app.get('/', (req, res) => {
+    res.json({
+      service: 'llm-portfolio-mcp-server',
+      status: 'active',
+      mcp_sse_endpoint: '/sse',
+      health_check: '/health',
+      auth: 'none'
+    });
+  });
+
+  // Explicit handling for OAuth discovery endpoints to inform Claude OAuth is not required
+  app.get(['/.well-known/oauth-authorization-server', '/.well-known/openid-configuration'], (req, res) => {
+    res.status(404).json({ error: 'OAuth authentication is not enabled on this public MCP server.' });
+  });
 
   // Health check endpoint for Render monitoring
   app.get('/health', (req, res) => {
@@ -172,22 +200,36 @@ async function startHttpServer() {
     }
   });
 
-  const mcpServer = createMcpServer();
-  let sseTransport = null;
-
   // SSE endpoint for Claude Custom Connector & MCP Clients
   app.get('/sse', async (req, res) => {
-    console.log('🔗 Client connected via SSE transport');
-    sseTransport = new SSEServerTransport('/messages', res);
-    await mcpServer.connect(sseTransport);
+    console.log('🔗 New SSE client connection request');
+    const mcpServer = createMcpServer();
+    const transport = new SSEServerTransport('/messages', res);
+    
+    transports.set(transport.sessionId, transport);
+
+    transport.onclose = () => {
+      console.log(`🔌 SSE Transport closed: ${transport.sessionId}`);
+      transports.delete(transport.sessionId);
+    };
+
+    await mcpServer.connect(transport);
   });
 
   // Messages endpoint for client-to-server requests
   app.post('/messages', async (req, res) => {
-    if (sseTransport) {
-      await sseTransport.handlePostMessage(req, res);
+    const sessionId = req.query.sessionId;
+    let transport = transports.get(sessionId);
+
+    // Fallback to most recent active transport if single-session client
+    if (!transport && transports.size > 0) {
+      transport = Array.from(transports.values()).pop();
+    }
+
+    if (transport) {
+      await transport.handlePostMessage(req, res);
     } else {
-      res.status(400).json({ error: 'No active SSE connection established.' });
+      res.status(400).json({ error: `Session ${sessionId || 'unknown'} not found or expired.` });
     }
   });
 
