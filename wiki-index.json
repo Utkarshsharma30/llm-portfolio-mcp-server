@@ -1,0 +1,679 @@
+{
+  "indexed_at": "2026-08-28T07:31:44.072Z",
+  "pages_count": 16,
+  "links_count": 102,
+  "pages": [
+    {
+      "slug": "utkarsh-sharma",
+      "title": "Utkarsh Sharma",
+      "summary": "MCA graduate and AI/ML enthusiast with expertise in Python, data science, and generative AI. Currently interning at Foremark Technology, building intelligent systems and document assistants. Actively seeking entry-level roles in backend development, AI/ML, and data science.",
+      "content": "# Utkarsh Sharma\r\n\r\n**Summary**: MCA graduate and AI/ML enthusiast with expertise in Python, data science, and generative AI. Currently interning at Foremark Technology, building intelligent systems and document assistants. Actively seeking entry-level roles in backend development, AI/ML, and data science.\r\n\r\n**Sources**:\r\n- raw/Utkarsh Sharma.md\r\n\r\n**Last updated**: 2026-08-28\r\n\r\n---\r\n\r\n## Overview\r\n\r\nUtkarsh Sharma is a software developer and AI/ML specialist with a strong foundation in computer applications. His work focuses on building intelligent systems at the intersection of AI/ML, data science, and software development. He is currently interning at Foremark Technology, contributing to real-world business automation systems.\r\n\r\n(source: Utkarsh Sharma.md)\r\n\r\n## About\r\n\r\n- **Education**: MCA from Ajay Kumar Garg Engineering College (2024-2026, AKTU), BCA from Meerut Institute of Technology (2021-2024, CCSU)\r\n- **Current Role**: Intern at Foremark Technology\r\n- **Focus Areas**: Backend development, AI/ML, data analysis, data science\r\n- **Passion**: Turning complex problems into elegant, working solutions\r\n- **Status**: Actively looking for entry-level roles and interesting projects\r\n\r\n(source: Utkarsh Sharma.md)\r\n\r\n## Skills\r\n\r\n### Languages\r\n- **Python**\r\n- **Java**\r\n- **Node.js**\r\n- **SQL**\r\n- **MySQL**\r\n- **PostgreSQL**\r\n\r\n### Data Science & Machine Learning\r\n- NumPy\r\n- Pandas\r\n- Matplotlib\r\n- Seaborn\r\n- Scikit-learn\r\n\r\n### Generative AI & NLP\r\n- LLMs (Large Language Models)\r\n- RAG (Retrieval-Augmented Generation)\r\n- Model Context Protocol (MCP)\r\n- Prompt Engineering\r\n- LangChain\r\n\r\n### Tools & Platforms\r\n- Git\r\n- GitHub\r\n- VS Code\r\n- MySQL Workbench\r\n- NetBeans\r\n- Render\r\n\r\n### Data Visualization\r\n- Power BI\r\n- Tableau\r\n\r\n### Core Concepts\r\n- DSA (Data Structures and Algorithms)\r\n- OOP (Object-Oriented Programming)\r\n- Software Development\r\n- Knowledge Graphs & Bidirectional Linking\r\n- Vector DB (Vector Databases)\r\n\r\n(source: Utkarsh Sharma.md)\r\n\r\n## Projects\r\n\r\n### 1. PDF Invoice Data Extraction & Automation\r\n- **Tech Stack**: Python, Tesseract, PyPDF2, OCR, OpenAI API\r\n- **Description**: Automated PDF processing pipeline that extracts and structures invoice data from both text-based and scanned PDFs. Implements OCR fallback (pytesseract, pdf2image) and regex-based parsing. Transforms unstructured data to structured JSON/CSV, eliminating manual data entry.\r\n\r\n### 2. RAG Book Assistant\r\n- **Tech Stack**: Streamlit, LangChain, Mistral AI, Chroma DB\r\n- **Description**: Retrieval-Augmented Generation system enabling intelligent Q&A over PDF documents. Uses semantic search via embeddings and a vector database (Chroma). Context-aware prompt pipeline ensures accurate, document-grounded responses and eliminates manual document search.\r\n\r\n### 3. Traffic Flow Prediction\r\n- **Tech Stack**: Python, Random Forest, Scikit-learn, Pandas\r\n- **Description**: Analyzed historical traffic data (vehicle counts, time, day) to identify congestion patterns and predict traffic situations using a Random Forest Classifier. Performed full data preprocessing, feature engineering (datetime conversion, encoding), and handled missing values to improve accuracy.\r\n\r\n### 4. Cafe and University Management Systems\r\n- **Tech Stack**: JAVA, MySQL, NetBeans, MySQL Workbench\r\n- **Description**: Developed a desktop application for café orders, billing, and inventory management. Implemented MySQL CRUD operations for efficient data handling. Created a system for managing student records and course enrolment. Used object-oriented programming for modular design.\r\n\r\n### 5. Ola Data Analysis\r\n- **Tech Stack**: Power BI, MySQL, Excel, Data Analysis\r\n- **Description**: Developed an interactive Power BI dashboard to analyze and visualize over 100,000+ data points, including booking trends and revenue insights. Delivered actionable insights on ride frequency, cancellations, and driver ratings for decision-making scenarios.\r\n\r\n### 6. Fun Chat Bot (Jassi Chatbot)\r\n- **Tech Stack**: Python, Streamlit, LangChain, Mistral AI\r\n- **Description**: A simple and interactive chatbot built using Streamlit, LangChain, and Mistral AI. The chatbot maintains conversation memory and responds with a fun personality named Jassi.\r\n\r\n### 7. Markdown Personal Wiki & Knowledge Graph MCP Server\r\n- **Tech Stack**: Node.js, PostgreSQL, Model Context Protocol (MCP), Render, Claude Connector, Markdown\r\n- **Description**: Personal wiki with pages, tags, and bidirectional knowledge graph following the Karpathy pattern (raw sources → structured wiki → knowledge graph → query flow). Indexed into PostgreSQL with a Node.js MCP server exposing search, page lookup, and link-graph tools, deployed publicly on Render and connected to Claude as a custom connector.\r\n\r\n(source: Utkarsh Sharma.md)\r\n\r\n## Experience\r\n\r\n### Foremark Technology\r\n- **Role**: Intern (Current)\r\n- **Duration**: Ongoing\r\n- **Responsibilities**: Contributing to real-world Business automation systems\r\n\r\n### EOXS (Ask Cruz)\r\n- **Role**: AI Intern\r\n- **Duration**: August 2026 — Ongoing\r\n- **Responsibilities**:\r\n  - Assist in developing, testing, and implementing AI/ML models and solutions\r\n  - Support the development and integration of AI-powered features into software products\r\n  - Work with data pre-processing, analysis, and feature engineering for AI applications\r\n\r\n### Elythra Edufyi Tech Solutions Pvt Ltd\r\n- **Role**: Intern\r\n- **Duration**: July 2026 — August 2026\r\n- **Responsibilities**:\r\n  - Educational internship with knowledge in the field of Artificial Intelligence\r\n  - Gain practical experience\r\n  - Work on real-time projects and tasks\r\n\r\n### Amar Ujala Limited\r\n- **Role**: Software Development Intern\r\n- **Duration**: February 2026 — May 2026\r\n- **Responsibilities**:\r\n  - Assisting in development, testing, and maintenance of internal automation systems\r\n  - Collaborating with team members to support ongoing Software Development Automation projects\r\n\r\n(source: Utkarsh Sharma.md)\r\n\r\n## Education\r\n\r\n### Master of Computer Applications (MCA)\r\n- **Institution**: Ajay Kumar Garg Engineering College, Ghaziabad\r\n- **University**: AKTU\r\n- **Duration**: 2024 – 2026\r\n\r\n### Bachelor of Computer Applications (BCA)\r\n- **Institution**: Meerut Institute of Technology, Meerut\r\n- **University**: CCSU\r\n- **Duration**: 2021 – 2024\r\n\r\n(source: Utkarsh Sharma.md)\r\n\r\n## Contact\r\n\r\n- Open to internships, full-time roles, and interesting projects in AI/ML, data science, and software development.\r\n\r\n## Related pages\r\n\r\n- [[AI/ML]]\r\n- [[Data Science]]\r\n- [[Python]]\r\n- [[Projects]]\r\n- [[Experience]]\r\n- [[Education]]\r\n",
+      "tags": [],
+      "links": [
+        "ai-ml",
+        "data-science",
+        "python",
+        "projects",
+        "experience",
+        "education"
+      ],
+      "filepath": "C:\\Users\\admin\\OneDrive\\Pictures\\llm-portfolio\\wiki\\utkarsh-sharma.md"
+    },
+    {
+      "slug": "traffic-flow-prediction",
+      "title": "Traffic Flow Prediction",
+      "summary": "Machine learning project that analyzes historical traffic data to identify congestion patterns and predict traffic situations using a Random Forest Classifier.",
+      "content": "# Traffic Flow Prediction\r\n\r\n**Summary**: Machine learning project that analyzes historical traffic data to identify congestion patterns and predict traffic situations using a Random Forest Classifier.\r\n\r\n**Sources**:\r\n- raw/Utkarsh Sharma.md\r\n\r\n**Last updated**: 2026-08-26\r\n\r\n---\r\n\r\n## Overview\r\n\r\nThis project applies machine learning techniques to predict traffic flow and congestion based on historical data. It uses a Random Forest Classifier to analyze patterns in vehicle counts, time of day, and day of week to forecast traffic conditions.\r\n\r\n(source: Utkarsh Sharma.md)\r\n\r\n## Technical Stack\r\n\r\n- **Language**: Python\r\n- **ML Algorithm**: Random Forest Classifier\r\n- **ML Library**: Scikit-learn\r\n- **Data Processing**: Pandas\r\n\r\n## Features\r\n\r\n### Data Analysis\r\n- Analyzes historical traffic data\r\n- Identifies congestion patterns\r\n- Examines relationships between time, day, and vehicle counts\r\n\r\n### Machine Learning\r\n- Uses Random Forest Classifier for prediction\r\n- Implements feature engineering\r\n- Handles datetime conversion and encoding\r\n- Addresses missing values to improve accuracy\r\n\r\n### Data Preprocessing\r\n- Full data preprocessing pipeline\r\n- Feature engineering for better model performance\r\n- Missing value handling\r\n- Data encoding and transformation\r\n\r\n## Methodology\r\n\r\n1. **Data Collection**: Gather historical traffic data (vehicle counts, time, day)\r\n2. **Data Cleaning**: Handle missing values and inconsistencies\r\n3. **Feature Engineering**: Convert datetime, encode categorical variables\r\n4. **Model Training**: Train Random Forest Classifier on historical data\r\n5. **Prediction**: Use trained model to predict traffic situations\r\n6. **Evaluation**: Assess model accuracy and performance\r\n\r\n## Skills Demonstrated\r\n\r\n- Machine learning model development\r\n- Data preprocessing and cleaning\r\n- Feature engineering\r\n- Classification algorithms\r\n- Python programming (Pandas, Scikit-learn)\r\n- Data analysis\r\n\r\n## Related pages\r\n\r\n- [[Utkarsh Sharma]]\r\n- [[Projects]]\r\n- [[Python]]\r\n- [[Data Science]]\r\n- [[Scikit-learn]]\r\n",
+      "tags": [],
+      "links": [
+        "utkarsh-sharma",
+        "projects",
+        "python",
+        "data-science",
+        "scikit-learn"
+      ],
+      "filepath": "C:\\Users\\admin\\OneDrive\\Pictures\\llm-portfolio\\wiki\\traffic-flow-prediction.md"
+    },
+    {
+      "slug": "rag-book-assistant",
+      "title": "RAG Book Assistant",
+      "summary": "Retrieval-Augmented Generation system that enables intelligent Q&A over PDF documents using semantic search and vector databases.",
+      "content": "# RAG Book Assistant\r\n\r\n**Summary**: Retrieval-Augmented Generation system that enables intelligent Q&A over PDF documents using semantic search and vector databases.\r\n\r\n**Sources**:\r\n- raw/Utkarsh Sharma.md\r\n\r\n**Last updated**: 2026-08-26\r\n\r\n---\r\n\r\n## Overview\r\n\r\nThe RAG Book Assistant is an intelligent document query system that allows users to ask questions about PDF documents and receive accurate, context-aware answers. It uses Retrieval-Augmented Generation (RAG) technology to combine information retrieval with text generation.\r\n\r\n(source: Utkarsh Sharma.md)\r\n\r\n## Technical Stack\r\n\r\n- **Framework**: Streamlit (web application)\r\n- **LLM Framework**: LangChain\r\n- **AI Model**: Mistral AI\r\n- **Vector Database**: Chroma DB\r\n- **Language**: Python\r\n\r\n## Features\r\n\r\n### Document Processing\r\n- Loads and processes PDF documents\r\n- Chunks documents into manageable segments\r\n- Creates embeddings for semantic search\r\n\r\n### Retrieval-Augmented Generation\r\n- Uses vector embeddings to find relevant document sections\r\n- Retrieves contextually relevant information\r\n- Generates answers based on retrieved content\r\n- Ensures responses are grounded in the source documents\r\n\r\n### User Interface\r\n- Streamlit-based web interface\r\n- Easy-to-use question input\r\n- Displays answers with source references\r\n- Interactive and responsive design\r\n\r\n## Benefits\r\n\r\n- **Accuracy**: Answers are based on actual document content\r\n- **Efficiency**: Eliminates manual document search\r\n- **Context Awareness**: Understands context from the documents\r\n- **Scalability**: Can handle multiple documents and large knowledge bases\r\n\r\n## Skills Demonstrated\r\n\r\n- Retrieval-Augmented Generation (RAG)\r\n- Vector databases (Chroma DB)\r\n- Large Language Models (LLMs)\r\n- Prompt engineering\r\n- Web application development (Streamlit)\r\n- Python programming\r\n\r\n## Related pages\r\n\r\n- [[Utkarsh Sharma]]\r\n- [[Projects]]\r\n- [[Python]]\r\n- [[AI/ML]]\r\n- [[Streamlit]]\r\n",
+      "tags": [],
+      "links": [
+        "utkarsh-sharma",
+        "projects",
+        "python",
+        "ai-ml",
+        "streamlit"
+      ],
+      "filepath": "C:\\Users\\admin\\OneDrive\\Pictures\\llm-portfolio\\wiki\\rag-book-assistant.md"
+    },
+    {
+      "slug": "python",
+      "title": "Python",
+      "summary": "High-level, interpreted programming language known for its readability, versatility, and extensive library ecosystem. A primary language for AI/ML, data science, web development, and automation.",
+      "content": "# Python\r\n\r\n**Summary**: High-level, interpreted programming language known for its readability, versatility, and extensive library ecosystem. A primary language for AI/ML, data science, web development, and automation.\r\n\r\n**Sources**:\r\n- raw/Utkarsh Sharma.md\r\n\r\n**Last updated**: 2026-08-26\r\n\r\n---\r\n\r\n## Overview\r\n\r\nPython is a general-purpose programming language created by Guido van Rossum and first released in 1991. It emphasizes code readability with its notable use of significant whitespace. Python's design philosophy emphasizes code readability, and its syntax allows programmers to express concepts in fewer lines of code.\r\n\r\n(source: Utkarsh Sharma.md)\r\n\r\n## Key Features\r\n\r\n- **Easy to Learn**: Simple, readable syntax\r\n- **Interpreted**: No compilation required\r\n- **Cross-platform**: Works on Windows, macOS, Linux\r\n- **Extensive Libraries**: Rich ecosystem of third-party packages\r\n- **Community Support**: Large, active developer community\r\n\r\n## Python in Utkarsh Sharma's Work\r\n\r\nPython is the primary programming language used across multiple projects:\r\n\r\n### Libraries Used\r\n- **NumPy**: Numerical computing\r\n- **Pandas**: Data manipulation\r\n- **Matplotlib/Seaborn**: Data visualization\r\n- **Scikit-learn**: Machine learning\r\n- **Tesseract**: OCR (Optical Character Recognition)\r\n- **PyPDF2**: PDF processing\r\n- **Streamlit**: Web application framework\r\n- **LangChain**: LLM application development\r\n- **OpenAI API**: Access to OpenAI models\r\n\r\n(source: Utkarsh Sharma.md)\r\n\r\n## Projects Using Python\r\n\r\n1. **[PDF Invoice Data Extraction & Automation](pdf-invoice-data-extraction-automation.md)**: Automated PDF processing with OCR\r\n2. **[RAG Book Assistant](rag-book-assistant.md)**: Document Q&A system with LangChain\r\n3. **[Traffic Flow Prediction](traffic-flow-prediction.md)**: ML-based traffic analysis\r\n4. **[Fun Chat Bot](fun-chat-bot.md)**: Interactive chatbot with Streamlit\r\n\r\n## Use Cases\r\n\r\n- Data processing and analysis\r\n- Machine learning model development\r\n- Web application development\r\n- Automation scripts\r\n- Prototyping and rapid development\r\n\r\n## Related pages\r\n\r\n- [[Utkarsh Sharma]]\r\n- [[AI/ML]]\r\n- [[Data Science]]\r\n- [[PDF Invoice Data Extraction & Automation]]\r\n- [[RAG Book Assistant]]\r\n- [[Traffic Flow Prediction]]\r\n- [[Fun Chat Bot]]\r\n",
+      "tags": [],
+      "links": [
+        "utkarsh-sharma",
+        "ai-ml",
+        "data-science",
+        "pdf-invoice-data-extraction-automation",
+        "rag-book-assistant",
+        "traffic-flow-prediction",
+        "fun-chat-bot"
+      ],
+      "filepath": "C:\\Users\\admin\\OneDrive\\Pictures\\llm-portfolio\\wiki\\python.md"
+    },
+    {
+      "slug": "projects",
+      "title": "Projects",
+      "summary": "Collection of software development and AI/ML projects created by Utkarsh Sharma, showcasing expertise in Python, Java, data science, and generative AI.",
+      "content": "# Projects\r\n\r\n**Summary**: Collection of software development and AI/ML projects created by Utkarsh Sharma, showcasing expertise in Python, Java, data science, and generative AI.\r\n\r\n**Sources**:\r\n- raw/Utkarsh Sharma.md\r\n\r\n**Last updated**: 2026-08-28\r\n\r\n---\r\n\r\n## Overview\r\n\r\nUtkarsh Sharma has developed multiple projects demonstrating skills in AI/ML, data science, software development, and automation. Each project addresses real-world problems with technical solutions.\r\n\r\n(source: Utkarsh Sharma.md)\r\n\r\n## Project List\r\n\r\n### 1. PDF Invoice Data Extraction & Automation\r\n- **Tech Stack**: Python, Tesseract, PyPDF2, OCR, OpenAI API\r\n- **Description**: Automated PDF processing pipeline that extracts and structures invoice data from both text-based and scanned PDFs. Implements OCR fallback (pytesseract, pdf2image) and regex-based parsing. Transforms unstructured data to structured JSON/CSV, eliminating manual data entry.\r\n- **Skills Demonstrated**: Python, OCR, regex, automation, API integration\r\n\r\n### 2. RAG Book Assistant\r\n- **Tech Stack**: Streamlit, LangChain, Mistral AI, Chroma DB\r\n- **Description**: Retrieval-Augmented Generation system enabling intelligent Q&A over PDF documents. Uses semantic search via embeddings and a vector database (Chroma). Context-aware prompt pipeline ensures accurate, document-grounded responses.\r\n- **Skills Demonstrated**: RAG, LLMs, vector databases, prompt engineering, Streamlit\r\n\r\n### 3. Traffic Flow Prediction\r\n- **Tech Stack**: Python, Random Forest, Scikit-learn, Pandas\r\n- **Description**: Analyzed historical traffic data to identify congestion patterns and predict traffic situations using a Random Forest Classifier. Full data preprocessing, feature engineering, and missing value handling.\r\n- **Skills Demonstrated**: Machine learning, data preprocessing, feature engineering, classification\r\n\r\n### 4. Cafe and University Management Systems\r\n- **Tech Stack**: JAVA, MySQL, NetBeans, MySQL Workbench\r\n- **Description**: Desktop applications for café orders, billing, inventory management, and student records/course enrollment. Implemented MySQL CRUD operations and OOP design.\r\n- **Skills Demonstrated**: Java, MySQL, OOP, database design, desktop applications\r\n\r\n### 5. Ola Data Analysis\r\n- **Tech Stack**: Power BI, MySQL, Excel, Data Analysis\r\n- **Description**: Interactive Power BI dashboard analyzing 100,000+ data points including booking trends and revenue insights. Delivered actionable insights on ride frequency, cancellations, and driver ratings.\r\n- **Skills Demonstrated**: Data visualization, BI tools, data analysis, reporting\r\n\r\n### 6. Fun Chat Bot (Jassi Chatbot)\r\n- **Tech Stack**: Python, Streamlit, LangChain, Mistral AI\r\n- **Description**: Interactive chatbot with conversation memory and fun personality named Jassi. Built using Streamlit, LangChain, and Mistral AI.\r\n- **Skills Demonstrated**: Chatbot development, LLMs, conversation management, web apps\r\n\r\n### 7. Markdown Personal Wiki & Knowledge Graph MCP Server\r\n- **Tech Stack**: Node.js, PostgreSQL, Model Context Protocol (MCP), Render, Claude Connector, Markdown\r\n- **Description**: Personal wiki with pages, tags, and bidirectional knowledge graph following the Karpathy pattern (raw sources → structured wiki → knowledge graph → query flow). Indexed into PostgreSQL with a Node.js MCP server exposing search, page lookup, and link-graph tools, deployed publicly on Render and connected to Claude as a custom connector.\r\n- **Skills Demonstrated**: MCP server development, knowledge graph modeling, PostgreSQL indexing, cloud deployment (Render), LLM custom connectors\r\n\r\n## Technology Distribution\r\n\r\n- **Python-based**: 4 projects\r\n- **Java-based**: 1 project\r\n- **Node.js-based**: 1 project\r\n- **AI/ML & LLMs**: 4 projects (RAG, Traffic Prediction, Fun Chat Bot, Personal Wiki MCP)\r\n- **Data Science**: 2 projects (Traffic Prediction, Ola Data Analysis)\r\n- **Web & API Services**: 3 projects (RAG Book Assistant, Fun Chat Bot, Personal Wiki MCP)\r\n- **Database & Graph**: 4 projects (Cafe Management, University Management, Ola Analysis, Personal Wiki MCP)\r\n\r\n## Related pages\r\n\r\n- [[Utkarsh Sharma]]\r\n- [[AI/ML]]\r\n- [[Data Science]]\r\n- [[Python]]\r\n- [[Experience]]\r\n- [[Education]]\r\n",
+      "tags": [],
+      "links": [
+        "utkarsh-sharma",
+        "ai-ml",
+        "data-science",
+        "python",
+        "experience",
+        "education"
+      ],
+      "filepath": "C:\\Users\\admin\\OneDrive\\Pictures\\llm-portfolio\\wiki\\projects.md"
+    },
+    {
+      "slug": "pdf-invoice-data-extraction-automation",
+      "title": "PDF Invoice Data Extraction & Automation",
+      "summary": "Automated PDF processing pipeline that extracts and structures invoice data from text-based and scanned PDFs using OCR and regex-based parsing.",
+      "content": "# PDF Invoice Data Extraction & Automation\r\n\r\n**Summary**: Automated PDF processing pipeline that extracts and structures invoice data from text-based and scanned PDFs using OCR and regex-based parsing.\r\n\r\n**Sources**:\r\n- raw/Utkarsh Sharma.md\r\n\r\n**Last updated**: 2026-08-26\r\n\r\n---\r\n\r\n## Overview\r\n\r\nThis project addresses the common business problem of manually extracting data from invoices in PDF format. It provides an automated solution that can handle both text-based PDFs and scanned documents, converting unstructured invoice data into structured JSON/CSV format.\r\n\r\n(source: Utkarsh Sharma.md)\r\n\r\n## Technical Stack\r\n\r\n- **Language**: Python\r\n- **OCR Libraries**: Tesseract, pdf2image\r\n- **PDF Processing**: PyPDF2\r\n- **API**: OpenAI API\r\n- **Parsing**: Regular expressions (regex)\r\n\r\n## Features\r\n\r\n### PDF Processing\r\n- Handles both text-based and scanned PDF invoices\r\n- Implements OCR (Optical Character Recognition) fallback for scanned documents\r\n- Uses Tesseract for text extraction from images\r\n\r\n### Data Extraction\r\n- Regex-based parsing to identify and extract invoice fields\r\n- Structured output in JSON and CSV formats\r\n- Handles various invoice formats and layouts\r\n\r\n### Automation\r\n- End-to-end pipeline from PDF input to structured data output\r\n- Eliminates manual data entry\r\n- Improves efficiency and accuracy\r\n\r\n## Business Value\r\n\r\n- **Time Savings**: Significantly reduces time spent on manual data entry\r\n- **Accuracy**: Minimizes human errors in data extraction\r\n- **Scalability**: Can process large volumes of invoices automatically\r\n- **Integration**: Structured output can be easily integrated with accounting systems\r\n\r\n## Skills Demonstrated\r\n\r\n- Python programming\r\n- OCR implementation\r\n- Regular expression pattern matching\r\n- API integration\r\n- Automation pipeline development\r\n\r\n## Related pages\r\n\r\n- [[Utkarsh Sharma]]\r\n- [[Projects]]\r\n- [[Python]]\r\n- [[AI/ML]]\r\n",
+      "tags": [],
+      "links": [
+        "utkarsh-sharma",
+        "projects",
+        "python",
+        "ai-ml"
+      ],
+      "filepath": "C:\\Users\\admin\\OneDrive\\Pictures\\llm-portfolio\\wiki\\pdf-invoice-data-extraction-automation.md"
+    },
+    {
+      "slug": "ola-data-analysis",
+      "title": "Ola Data Analysis",
+      "summary": "Interactive Power BI dashboard analyzing 100,000+ data points to provide actionable insights on ride trends, revenue, cancellations, and driver ratings.",
+      "content": "# Ola Data Analysis\r\n\r\n**Summary**: Interactive Power BI dashboard analyzing 100,000+ data points to provide actionable insights on ride trends, revenue, cancellations, and driver ratings.\r\n\r\n**Sources**:\r\n- raw/Utkarsh Sharma.md\r\n\r\n**Last updated**: 2026-08-26\r\n\r\n---\r\n\r\n## Overview\r\n\r\nThis project involves the development of a business intelligence solution for analyzing Ola (ride-hailing service) data. The interactive dashboard provides insights into various aspects of the ride-hailing business, enabling data-driven decision making.\r\n\r\n(source: Utkarsh Sharma.md)\r\n\r\n## Technical Stack\r\n\r\n- **BI Tool**: Power BI\r\n- **Database**: MySQL\r\n- **Spreadsheet**: Excel\r\n- **Focus**: Data Analysis\r\n\r\n## Features\r\n\r\n### Data Analysis\r\n- Analyzes 100,000+ data points\r\n- Examines booking trends over time\r\n- Tracks revenue patterns\r\n\r\n### Dashboard Capabilities\r\n- Interactive visualizations\r\n- Filterable data views\r\n- Real-time insights\r\n- Drill-down capabilities\r\n\r\n### Insights Provided\r\n- **Ride Frequency**: Patterns in ride bookings\r\n- **Cancellations**: Analysis of ride cancellations\r\n- **Driver Ratings**: Evaluation of driver performance\r\n- **Revenue Insights**: Financial analysis and trends\r\n\r\n## Business Value\r\n\r\n- **Decision Making**: Provides actionable insights for business decisions\r\n- **Performance Tracking**: Monitors key metrics and KPIs\r\n- **Trend Analysis**: Identifies patterns and trends in ride data\r\n- **Operational Improvements**: Helps optimize operations based on data\r\n\r\n## Skills Demonstrated\r\n\r\n- Power BI dashboard development\r\n- Data visualization\r\n- Business intelligence\r\n- MySQL data querying\r\n- Excel data manipulation\r\n- Data analysis and interpretation\r\n\r\n## Related pages\r\n\r\n- [[Utkarsh Sharma]]\r\n- [[Projects]]\r\n- [[Data Science]]\r\n- [[Power BI]]\r\n- [[MySQL]]\r\n",
+      "tags": [],
+      "links": [
+        "utkarsh-sharma",
+        "projects",
+        "data-science",
+        "power-bi",
+        "mysql"
+      ],
+      "filepath": "C:\\Users\\admin\\OneDrive\\Pictures\\llm-portfolio\\wiki\\ola-data-analysis.md"
+    },
+    {
+      "slug": "markdown-personal-wiki-mcp",
+      "title": "Markdown Personal Wiki & Knowledge Graph MCP Server",
+      "summary": "Markdown-based personal wiki with bidirectional knowledge graph, PostgreSQL indexing, and Node.js MCP server deployed on Render and connected to Claude as a live custom connector.",
+      "content": "# Markdown Personal Wiki & Knowledge Graph MCP Server\n\n**Summary**: Markdown-based personal wiki with bidirectional knowledge graph, PostgreSQL indexing, and Node.js MCP server deployed on Render and connected to Claude as a live custom connector.\n\n**Sources**:\n- raw/Utkarsh Sharma.md\n\n**Last updated**: 2026-08-28\n\n---\n\n## Overview\n\nThe Markdown Personal Wiki & Knowledge Graph MCP Server is an end-to-end knowledge management and tool retrieval system. Following the Karpathy pattern (raw sources → structured wiki → knowledge graph → query flow), it structures knowledge into markdown pages and bidirectional graph links, indexes them in PostgreSQL, and exposes the system to AI agents (such as Claude) via Model Context Protocol (MCP) APIs.\n\n(source: Utkarsh Sharma.md)\n\n## Technical Stack\n\n- **Server Backend**: Node.js\n- **Database**: PostgreSQL (relational & graph index)\n- **Protocol**: Model Context Protocol (MCP)\n- **Deployment**: Render (public deployment)\n- **Integration**: Claude Custom Connector\n- **Content Format**: Markdown (pages, tags, bidirectional links)\n\n## Architecture & Workflow (Karpathy Pattern)\n\n1. **Raw Sources**: Ingestion of raw notes, articles, and documents.\n2. **Structured Wiki**: Formatting content into clean, interlinked Markdown pages with tags and metadata.\n3. **Knowledge Graph**: Parsing and building bidirectional links (`[[page-name]]`) between concepts and entities.\n4. **PostgreSQL Indexing**: Storing page content, metadata, and link relationship graphs for fast relational & vector query performance.\n5. **MCP Server**: Node.js backend exposing standard MCP tools:\n   - `search`: Full-text / semantic search over wiki pages.\n   - `page lookup`: Fetch exact page content by title/slug.\n   - `link-graph`: Traversal and analysis of incoming/outgoing knowledge links.\n6. **Query Flow & LLM Integration**: Live public deployment on Render connected directly to Claude as a custom connector.\n\n## Features\n\n### Knowledge Representation\n- Page, tag, and entity-level organization\n- Bidirectional link parsing (`[[page-name]]`) and connection tracking\n- Structured metadata frontmatter support\n\n### MCP Tooling & API\n- Standardized Model Context Protocol endpoints\n- Search tool for rapid knowledge retrieval\n- Page lookup tool for deep context fetching\n- Link-graph tool for context expansion and graph traversal\n\n### Deployment & Integration\n- Public production server running on Render\n- Seamless live connection to Claude interface\n\n## Skills Demonstrated\n\n- Model Context Protocol (MCP) development\n- Node.js backend engineering\n- PostgreSQL database schema design & indexing\n- Knowledge graph construction & bidirectional linking\n- System architecture design (Karpathy ingestion pattern)\n- Cloud deployment & continuous delivery (Render)\n- Custom connector integration with LLMs (Claude)\n\n## Related pages\n\n- [[Utkarsh Sharma]]\n- [[Projects]]\n- [[AI/ML]]\n- [[Python]]\n",
+      "tags": [],
+      "links": [
+        "page-name",
+        "utkarsh-sharma",
+        "projects",
+        "ai-ml",
+        "python"
+      ],
+      "filepath": "C:\\Users\\admin\\OneDrive\\Pictures\\llm-portfolio\\wiki\\markdown-personal-wiki-mcp.md"
+    },
+    {
+      "slug": "log",
+      "title": "Portfolio Wiki - Operation Log",
+      "summary": "Append-only record of all operations performed on the professional portfolio wiki. Lists dates, sources, pages created, and changes made.",
+      "content": "# Portfolio Wiki - Operation Log\r\n\r\n**Summary**: Append-only record of all operations performed on the professional portfolio wiki. Lists dates, sources, pages created, and changes made.\r\n\r\n**Last updated**: 2026-08-28\r\n\r\n---\r\n\r\n## 2026-08-28\r\n\r\n### Source Ingestion: Markdown Personal Wiki & Knowledge Graph MCP Server Project\r\n\r\n**Source**: raw/Utkarsh Sharma.md\r\n**Ingested**: 2026-08-28\r\n\r\n#### Concept / Project Pages Created\r\n- Created: [wiki/markdown-personal-wiki-mcp.md](markdown-personal-wiki-mcp.md)\r\n- Content: Dedicated project documentation for Markdown Personal Wiki & Knowledge Graph MCP Server (Node.js, PostgreSQL, MCP, Render, Claude Connector).\r\n\r\n#### Pages Updated\r\n- [raw/Utkarsh Sharma.md](raw/Utkarsh%20Sharma.md) - Appended Project 07 under Section 03 — Projects.\r\n- [wiki/utkarsh-sharma.md](utkarsh-sharma.md) - Added Node.js, PostgreSQL, Model Context Protocol (MCP), Render to skills and added Project 07.\r\n- [wiki/projects.md](projects.md) - Added Project 07 and updated Technology Distribution stats (7 total projects).\r\n- [wiki/index.md](index.md) - Updated Table of Contents, tech skills, quick navigation, and statistics (15 total pages, 7 projects).\r\n\r\n---\r\n\r\n## 2026-08-26\r\n\r\n### Source Ingestion: Utkarsh Sharma\r\n\r\n**Source**: raw/Utkarsh Sharma.md\r\n**Added to raw/**: 2026-08-26 19:24\r\n**Ingested**: 2026-08-26 19:25-19:40\r\n**Original Location**: Previously in llm-wiki/raw/, moved to llm-portfolio/raw/ per user request\r\n\r\n#### Summary Page Created\r\n- Created: [wiki/utkarsh-sharma.md](utkarsh-sharma.md)\r\n- Content: Complete professional profile including about, skills, projects, experience, education, and contact information\r\n\r\n#### Concept Pages Created (11 pages)\r\n\r\n**Core Competencies:**\r\n- [wiki/ai-ml.md](ai-ml.md) - AI/ML domain overview (LLMs, RAG, Prompt Engineering, LangChain)\r\n- [wiki/data-science.md](data-science.md) - Data Science overview (Python libraries, visualization, process)\r\n- [wiki/python.md](python.md) - Python programming language overview\r\n\r\n**Projects:**\r\n- [wiki/projects.md](projects.md) - Overview of all 6 projects\r\n- [wiki/pdf-invoice-data-extraction-automation.md](pdf-invoice-data-extraction-automation.md) - PDF processing with OCR\r\n- [wiki/rag-book-assistant.md](rag-book-assistant.md) - Document Q&A with RAG\r\n- [wiki/traffic-flow-prediction.md](traffic-flow-prediction.md) - Traffic analysis with ML\r\n- [wiki/cafe-and-university-management-systems.md](cafe-and-university-management-systems.md) - Java/MySQL desktop apps\r\n- [wiki/ola-data-analysis.md](ola-data-analysis.md) - Power BI dashboard analysis\r\n- [wiki/fun-chat-bot.md](fun-chat-bot.md) - Interactive chatbot\r\n\r\n**Professional Information:**\r\n- [wiki/experience.md](experience.md) - Work history with 4 internships\r\n- [wiki/education.md](education.md) - Academic background (MCA, BCA)\r\n\r\n#### Administrative Pages Created\r\n- [wiki/index.md](index.md) - Table of contents with all pages organized\r\n- [wiki/log.md](log.md) - This operation log page\r\n\r\n#### Key Statistics\r\n- **Total New Pages**: 14\r\n- **Source Documents**: 1 (Utkarsh Sharma.md)\r\n- **Projects Documented**: 6\r\n- **Experience Entries**: 4\r\n- **Wiki-Links Added**: 50+ internal links connecting related pages\r\n- **Source Citations**: All pages properly cited with (source: Utkarsh Sharma.md)\r\n\r\n#### Notes\r\n- All pages follow the standard format: Summary, Sources, Last updated, Content, Related pages\r\n- All factual claims are cited with source references\r\n- Wiki-links ([[page-name]]) used throughout to connect related concepts\r\n- Page names follow lowercase-with-hyphens convention\r\n- No modifications made to raw/ folder (per workflow rules)\r\n- File moved from llm-wiki/raw/ to llm-portfolio/raw/ before ingestion\r\n\r\n## Workflow Followed\r\n\r\nAs per standard ingest workflow:\r\n1. ✅ Read the full source document\r\n2. ✅ Moved source to separate portfolio wiki folder\r\n3. ✅ Created summary page in wiki/ named after the source\r\n4. ✅ Created concept pages for each major idea or entity\r\n5. ✅ Added wiki-links ([[page-name]]) to connect related pages\r\n6. ✅ Updated wiki/index.md with new pages and one-line descriptions\r\n7. ✅ Appended entry to wiki/log.md with date, source name, and what changed\r\n\r\n---\r\n\r\n## Previous Operations\r\n\r\nNone - This is the first source document ingested into the portfolio wiki.\r\n\r\n## Next Steps\r\n\r\n- Monitor for new source documents in raw/ folder\r\n- Periodic review for updates to existing pages\r\n- Create additional concept pages as needed\r\n- Lint and audit wiki for contradictions and orphan pages\r\n",
+      "tags": [],
+      "links": [
+        "page-name",
+        "markdown-personal-wiki-mcp",
+        "utkarsh20sharma",
+        "utkarsh-sharma",
+        "projects",
+        "index",
+        "ai-ml",
+        "data-science",
+        "python",
+        "pdf-invoice-data-extraction-automation",
+        "rag-book-assistant",
+        "traffic-flow-prediction",
+        "cafe-and-university-management-systems",
+        "ola-data-analysis",
+        "fun-chat-bot",
+        "experience",
+        "education"
+      ],
+      "filepath": "C:\\Users\\admin\\OneDrive\\Pictures\\llm-portfolio\\wiki\\log.md"
+    },
+    {
+      "slug": "index",
+      "title": "Portfolio Wiki - Table of Contents",
+      "summary": "Master index of all pages in the professional portfolio wiki. Organized by category for easy navigation through Utkarsh Sharma's skills, projects, experience, and education.",
+      "content": "# Portfolio Wiki - Table of Contents\r\n\r\n**Summary**: Master index of all pages in the professional portfolio wiki. Organized by category for easy navigation through Utkarsh Sharma's skills, projects, experience, and education.\r\n\r\n**Sources**: All pages are derived from raw/Utkarsh Sharma.md unless otherwise noted.\r\n\r\n**Last updated**: 2026-08-28\r\n\r\n---\r\n\r\n## Overview\r\n\r\nThis wiki contains information extracted from the source document \"Utkarsh Sharma\" - a professional portfolio and resume. It showcases skills in AI/ML, data science, software development, and includes detailed information about projects, work experience, and academic background.\r\n\r\n## Source Documents\r\n\r\n- **[Utkarsh Sharma](utkarsh-sharma.md)** - Primary source document in raw/ folder\r\n\r\n## Main Pages\r\n\r\n### Profile\r\n- **[Utkarsh Sharma](utkarsh-sharma.md)** - Complete professional profile with skills, projects, experience, and education\r\n\r\n## Core Competencies\r\n\r\n- **[AI/ML](ai-ml.md)** - Artificial Intelligence and Machine Learning expertise\r\n- **[Data Science](data-science.md)** - Data analysis, visualization, and ML skills\r\n- **[Python](python.md)** - Primary programming language with extensive library usage\r\n\r\n## Projects (7)\r\n\r\n- **[Projects Overview](projects.md)** - Summary of all projects\r\n- **[PDF Invoice Data Extraction & Automation](pdf-invoice-data-extraction-automation.md)** - Automated PDF processing with OCR\r\n- **[RAG Book Assistant](rag-book-assistant.md)** - Document Q&A system with RAG\r\n- **[Traffic Flow Prediction](traffic-flow-prediction.md)** - ML-based traffic analysis\r\n- **[Cafe and University Management Systems](cafe-and-university-management-systems.md)** - Java/MySQL desktop applications\r\n- **[Ola Data Analysis](ola-data-analysis.md)** - Power BI dashboard with 100K+ data points\r\n- **[Fun Chat Bot](fun-chat-bot.md)** - Interactive chatbot with Streamlit and Mistral AI\r\n- **[Markdown Personal Wiki & MCP Knowledge Graph](markdown-personal-wiki-mcp.md)** - Node.js MCP server with PostgreSQL & Claude integration\r\n\r\n## Professional Experience\r\n\r\n- **[Experience](experience.md)** - Complete work history with responsibilities and timelines\r\n\r\n## Academic Background\r\n\r\n- **[Education](education.md)** - MCA and BCA degrees from recognized institutions\r\n\r\n## Technologies and Skills\r\n\r\n### Programming Languages\r\n- Python\r\n- Java\r\n- Node.js\r\n- SQL\r\n- MySQL\r\n- PostgreSQL\r\n\r\n### AI/ML & Data Science\r\n- LLMs (Large Language Models)\r\n- RAG (Retrieval-Augmented Generation)\r\n- Model Context Protocol (MCP)\r\n- Prompt Engineering\r\n- LangChain\r\n- NumPy, Pandas, Matplotlib, Seaborn\r\n- Scikit-learn\r\n- Random Forest\r\n\r\n### Tools & Platforms\r\n- Git, GitHub\r\n- VS Code\r\n- NetBeans\r\n- MySQL Workbench\r\n- Power BI\r\n- Tableau\r\n- OpenAI API\r\n- Streamlit\r\n- Chroma DB\r\n- Render\r\n- Tesseract\r\n- PyPDF2\r\n\r\n### Core Concepts\r\n- DSA (Data Structures and Algorithms)\r\n- OOP (Object-Oriented Programming)\r\n- Software Development\r\n- Knowledge Graphs & Bidirectional Links\r\n- Vector Databases\r\n\r\n## Administrative Pages\r\n\r\n- **[Log](log.md)** - Operation history and changes\r\n\r\n---\r\n\r\n## Quick Navigation\r\n\r\n### By Category\r\n- **Profile**: [Utkarsh Sharma](utkarsh-sharma.md)\r\n- **Skills**: [AI/ML](ai-ml.md) | [Data Science](data-science.md) | [Python](python.md)\r\n- **Projects**: [Projects](projects.md) | [PDF Extraction](pdf-invoice-data-extraction-automation.md) | [RAG Assistant](rag-book-assistant.md) | [Traffic Prediction](traffic-flow-prediction.md) | [Management Systems](cafe-and-university-management-systems.md) | [Ola Analysis](ola-data-analysis.md) | [Chat Bot](fun-chat-bot.md) | [Personal Wiki MCP](markdown-personal-wiki-mcp.md)\r\n- **Experience**: [Experience](experience.md)\r\n- **Education**: [Education](education.md)\r\n\r\n### By Technology\r\n- **Python**: [Python](python.md) | [Projects using Python](projects.md)\r\n- **AI/ML & MCP**: [AI/ML](ai-ml.md) | [RAG Book Assistant](rag-book-assistant.md) | [Fun Chat Bot](fun-chat-bot.md) | [Personal Wiki MCP](markdown-personal-wiki-mcp.md)\r\n- **Data Science**: [Data Science](data-science.md) | [Traffic Flow Prediction](traffic-flow-prediction.md) | [Ola Data Analysis](ola-data-analysis.md)\r\n- **Java**: [Cafe and University Management Systems](cafe-and-university-management-systems.md)\r\n- **Node.js & PostgreSQL**: [Markdown Personal Wiki MCP](markdown-personal-wiki-mcp.md)\r\n\r\n## Statistics\r\n\r\n- **Total Pages**: 15 (excluding this index and log)\r\n- **Source Documents**: 1 (Utkarsh Sharma.md)\r\n- **Projects**: 7\r\n- **Experience Entries**: 4\r\n- **Education Programs**: 2\r\n- **Last Updated**: 2026-08-28\r\n\r\n## Related pages\r\n\r\n- [[Utkarsh Sharma]]\r\n- [[log]]\r\n",
+      "tags": [],
+      "links": [
+        "utkarsh-sharma",
+        "log",
+        "ai-ml",
+        "data-science",
+        "python",
+        "projects",
+        "pdf-invoice-data-extraction-automation",
+        "rag-book-assistant",
+        "traffic-flow-prediction",
+        "cafe-and-university-management-systems",
+        "ola-data-analysis",
+        "fun-chat-bot",
+        "markdown-personal-wiki-mcp",
+        "experience",
+        "education"
+      ],
+      "filepath": "C:\\Users\\admin\\OneDrive\\Pictures\\llm-portfolio\\wiki\\index.md"
+    },
+    {
+      "slug": "fun-chat-bot",
+      "title": "Fun Chat Bot (Jassi Chatbot)",
+      "summary": "Interactive chatbot built using Streamlit, LangChain, and Mistral AI that maintains conversation memory and responds with a fun personality named Jassi.",
+      "content": "# Fun Chat Bot (Jassi Chatbot)\r\n\r\n**Summary**: Interactive chatbot built using Streamlit, LangChain, and Mistral AI that maintains conversation memory and responds with a fun personality named Jassi.\r\n\r\n**Sources**:\r\n- raw/Utkarsh Sharma.md\r\n\r\n**Last updated**: 2026-08-26\r\n\r\n---\r\n\r\n## Overview\r\n\r\nThe Fun Chat Bot, also known as Jassi Chatbot, is a conversational AI application that provides an engaging and interactive user experience. It uses modern AI frameworks to create a chatbot with personality and memory capabilities.\r\n\r\n(source: Utkarsh Sharma.md)\r\n\r\n## Technical Stack\r\n\r\n- **Language**: Python\r\n- **Framework**: Streamlit (web application)\r\n- **LLM Framework**: LangChain\r\n- **AI Model**: Mistral AI\r\n\r\n## Features\r\n\r\n### Conversation Management\r\n- Maintains conversation history and context\r\n- Remembers previous interactions\r\n- Provides coherent, context-aware responses\r\n\r\n### Personality\r\n- Fun, engaging personality named Jassi\r\n- Personalized responses\r\n- Conversational tone\r\n\r\n### Web Interface\r\n- Streamlit-based web application\r\n- Simple and intuitive user interface\r\n- Real-time conversation display\r\n\r\n## Benefits\r\n\r\n- **User Engagement**: Fun personality keeps users engaged\r\n- **Memory**: Maintains context across conversation turns\r\n- **Accessibility**: Easy to use through web browser\r\n- **Extensibility**: Can be enhanced with additional features\r\n\r\n## Skills Demonstrated\r\n\r\n- Chatbot development\r\n- Large Language Models (LLMs)\r\n- Conversation memory management\r\n- Streamlit web application development\r\n- Python programming\r\n- LangChain framework usage\r\n\r\n## Related pages\r\n\r\n- [[Utkarsh Sharma]]\r\n- [[Projects]]\r\n- [[Python]]\r\n- [[AI/ML]]\r\n- [[Streamlit]]\r\n",
+      "tags": [],
+      "links": [
+        "utkarsh-sharma",
+        "projects",
+        "python",
+        "ai-ml",
+        "streamlit"
+      ],
+      "filepath": "C:\\Users\\admin\\OneDrive\\Pictures\\llm-portfolio\\wiki\\fun-chat-bot.md"
+    },
+    {
+      "slug": "experience",
+      "title": "Experience",
+      "summary": "Professional work history of Utkarsh Sharma, including internships at Foremark Technology, EOXS (Ask Cruz), Elythra Edufyi Tech Solutions, and Amar Ujala Limited.",
+      "content": "# Experience\r\n\r\n**Summary**: Professional work history of Utkarsh Sharma, including internships at Foremark Technology, EOXS (Ask Cruz), Elythra Edufyi Tech Solutions, and Amar Ujala Limited.\r\n\r\n**Sources**:\r\n- raw/Utkarsh Sharma.md\r\n\r\n**Last updated**: 2026-08-26\r\n\r\n---\r\n\r\n## Overview\r\n\r\nUtkarsh Sharma has gained experience through multiple internships in software development, AI/ML, and data-related fields. His roles have involved developing AI models, working with data, and contributing to automation systems.\r\n\r\n(source: Utkarsh Sharma.md)\r\n\r\n## Current Position\r\n\r\n### Foremark Technology\r\n- **Role**: Intern\r\n- **Duration**: Ongoing (Current)\r\n- **Responsibilities**:\r\n  - Contributing to real-world Business automation systems\r\n- **Focus**: Business automation, software development\r\n\r\n## AI/ML Internships\r\n\r\n### EOXS (Ask Cruz)\r\n- **Role**: AI Intern\r\n- **Duration**: August 2026 — Ongoing\r\n- **Responsibilities**:\r\n  - Assist in developing, testing, and implementing AI/ML models and solutions\r\n  - Support the development and integration of AI-powered features into software products\r\n  - Work with data pre-processing, analysis, and feature engineering for AI applications\r\n- **Focus**: AI/ML development, data engineering\r\n\r\n## Educational and Software Development Internships\r\n\r\n### Elythra Edufyi Tech Solutions Pvt Ltd\r\n- **Role**: Intern\r\n- **Duration**: July 2026 — August 2026\r\n- **Responsibilities**:\r\n  - Educational internship with knowledge in the field of Artificial Intelligence\r\n  - Gain practical experience\r\n  - Work on real-time projects and tasks\r\n- **Focus**: AI education, practical experience\r\n\r\n### Amar Ujala Limited\r\n- **Role**: Software Development Intern\r\n- **Duration**: February 2026 — May 2026\r\n- **Responsibilities**:\r\n  - Assisting in development, testing, and maintenance of internal automation systems\r\n  - Collaborating with team members to support ongoing Software Development Automation projects\r\n- **Focus**: Software development, automation, team collaboration\r\n\r\n## Skills Developed Through Experience\r\n\r\n- AI/ML model development and deployment\r\n- Data preprocessing and feature engineering\r\n- Software development and testing\r\n- Automation system development\r\n- Team collaboration and project support\r\n- Business automation systems\r\n\r\n## Timeline\r\n\r\n```\r\n2026\r\n├── Feb-May: Software Development Intern @ Amar Ujala Limited\r\n├── Jul-Aug: Intern @ Elythra Edufyi Tech Solutions Pvt Ltd\r\n├── Aug-Ongoing: AI Intern @ EOXS (Ask Cruz)\r\n└── Ongoing: Intern @ Foremark Technology\r\n```\r\n\r\n## Related pages\r\n\r\n- [[Utkarsh Sharma]]\r\n- [[Projects]]\r\n- [[AI/ML]]\r\n- [[Data Science]]\r\n- [[Education]]\r\n",
+      "tags": [],
+      "links": [
+        "utkarsh-sharma",
+        "projects",
+        "ai-ml",
+        "data-science",
+        "education"
+      ],
+      "filepath": "C:\\Users\\admin\\OneDrive\\Pictures\\llm-portfolio\\wiki\\experience.md"
+    },
+    {
+      "slug": "education",
+      "title": "Education",
+      "summary": "Academic background of Utkarsh Sharma, including Master of Computer Applications (MCA) from Ajay Kumar Garg Engineering College and Bachelor of Computer Applications (BCA) from Meerut Institute of Technology.",
+      "content": "# Education\r\n\r\n**Summary**: Academic background of Utkarsh Sharma, including Master of Computer Applications (MCA) from Ajay Kumar Garg Engineering College and Bachelor of Computer Applications (BCA) from Meerut Institute of Technology.\r\n\r\n**Sources**:\r\n- raw/Utkarsh Sharma.md\r\n\r\n**Last updated**: 2026-08-26\r\n\r\n---\r\n\r\n## Overview\r\n\r\nUtkarsh Sharma has completed both undergraduate and postgraduate studies in computer applications, providing a strong academic foundation for his career in AI/ML, data science, and software development.\r\n\r\n(source: Utkarsh Sharma.md)\r\n\r\n## Postgraduate Degree\r\n\r\n### Master of Computer Applications (MCA)\r\n- **Institution**: Ajay Kumar Garg Engineering College, Ghaziabad\r\n- **University**: Dr. A.P.J. Abdul Kalam Technical University (AKTU)\r\n- **Duration**: 2024 – 2026\r\n- **Status**: Currently pursuing (as of 2026)\r\n\r\n## Undergraduate Degree\r\n\r\n### Bachelor of Computer Applications (BCA)\r\n- **Institution**: Meerut Institute of Technology, Meerut\r\n- **University**: Chaudhary Charan Singh University (CCSU)\r\n- **Duration**: 2021 – 2024\r\n- **Status**: Completed\r\n\r\n## Academic Focus\r\n\r\nThe MCA and BCA programs typically cover:\r\n- Computer programming and algorithms\r\n- Database management systems\r\n- Software engineering\r\n- Web development\r\n- Data structures\r\n- Operating systems\r\n- Computer networks\r\n- Artificial intelligence fundamentals\r\n\r\n## Career Progression\r\n\r\n- **2021-2024**: BCA at Meerut Institute of Technology\r\n- **2024-2026**: MCA at Ajay Kumar Garg Engineering College\r\n- **2026**: Multiple internships during and after studies\r\n\r\n## Related pages\r\n\r\n- [[Utkarsh Sharma]]\r\n- [[Experience]]\r\n- [[Projects]]\r\n- [[AI/ML]]\r\n- [[Data Science]]\r\n",
+      "tags": [],
+      "links": [
+        "utkarsh-sharma",
+        "experience",
+        "projects",
+        "ai-ml",
+        "data-science"
+      ],
+      "filepath": "C:\\Users\\admin\\OneDrive\\Pictures\\llm-portfolio\\wiki\\education.md"
+    },
+    {
+      "slug": "data-science",
+      "title": "Data Science",
+      "summary": "Interdisciplinary field that uses scientific methods, processes, algorithms, and systems to extract knowledge and insights from structured and unstructured data.",
+      "content": "# Data Science\r\n\r\n**Summary**: Interdisciplinary field that uses scientific methods, processes, algorithms, and systems to extract knowledge and insights from structured and unstructured data.\r\n\r\n**Sources**:\r\n- raw/Utkarsh Sharma.md\r\n\r\n**Last updated**: 2026-08-26\r\n\r\n---\r\n\r\n## Overview\r\n\r\nData Science combines computer science, statistics, and domain expertise to extract meaningful insights from data. It involves data collection, cleaning, analysis, visualization, and the application of machine learning techniques.\r\n\r\n(source: Utkarsh Sharma.md)\r\n\r\n## Key Libraries and Tools\r\n\r\n### Python Libraries\r\n- **NumPy**: Fundamental package for numerical computing in Python\r\n- **Pandas**: Data manipulation and analysis library\r\n- **Matplotlib**: Data visualization library\r\n- **Seaborn**: Statistical data visualization\r\n- **Scikit-learn**: Machine learning library\r\n\r\n### Data Visualization Tools\r\n- **Power BI**: Business analytics tool by Microsoft\r\n- **Tableau**: Data visualization software\r\n\r\n(source: Utkarsh Sharma.md)\r\n\r\n## Applications\r\n\r\n- Data analysis and interpretation\r\n- Statistical modeling\r\n- Predictive analytics\r\n- Data visualization and reporting\r\n- Feature engineering for ML models\r\n\r\n## Data Science Process\r\n\r\n1. **Data Collection**: Gathering raw data from various sources\r\n2. **Data Cleaning**: Handling missing values, removing duplicates, fixing inconsistencies\r\n3. **Data Exploration**: Understanding data distributions, relationships, and patterns\r\n4. **Data Preprocessing**: Feature scaling, encoding, datetime conversion\r\n5. **Model Building**: Selecting and training appropriate ML models\r\n6. **Evaluation**: Assessing model performance with metrics\r\n7. **Visualization**: Creating charts, graphs, and dashboards\r\n8. **Deployment**: Implementing models in production\r\n\r\n## Related pages\r\n\r\n- [[Utkarsh Sharma]]\r\n- [[Python]]\r\n- [[Traffic Flow Prediction]]\r\n- [[Ola Data Analysis]]\r\n",
+      "tags": [],
+      "links": [
+        "utkarsh-sharma",
+        "python",
+        "traffic-flow-prediction",
+        "ola-data-analysis"
+      ],
+      "filepath": "C:\\Users\\admin\\OneDrive\\Pictures\\llm-portfolio\\wiki\\data-science.md"
+    },
+    {
+      "slug": "cafe-and-university-management-systems",
+      "title": "Cafe and University Management Systems",
+      "summary": "Desktop applications for café orders, billing, inventory management, and student records/course enrollment using Java, MySQL, and object-oriented programming.",
+      "content": "# Cafe and University Management Systems\r\n\r\n**Summary**: Desktop applications for café orders, billing, inventory management, and student records/course enrollment using Java, MySQL, and object-oriented programming.\r\n\r\n**Sources**:\r\n- raw/Utkarsh Sharma.md\r\n\r\n**Last updated**: 2026-08-26\r\n\r\n---\r\n\r\n## Overview\r\n\r\nThis project involves the development of two separate but related desktop applications: one for managing a café's operations and another for university student records and course enrollment. Both systems use Java, MySQL, and object-oriented programming principles.\r\n\r\n(source: Utkarsh Sharma.md)\r\n\r\n## Technical Stack\r\n\r\n- **Language**: Java\r\n- **Database**: MySQL\r\n- **IDE**: NetBeans\r\n- **Database Tool**: MySQL Workbench\r\n- **Paradigm**: Object-Oriented Programming (OOP)\r\n\r\n## Cafe Management System\r\n\r\n### Features\r\n- Order management\r\n- Billing system\r\n- Inventory tracking\r\n- Customer records\r\n\r\n### Capabilities\r\n- Create, Read, Update, Delete (CRUD) operations for café data\r\n- Efficient data handling using MySQL\r\n- User-friendly interface for staff\r\n\r\n## University Management System\r\n\r\n### Features\r\n- Student records management\r\n- Course enrollment\r\n- Faculty information\r\n- Academic records\r\n\r\n### Capabilities\r\n- CRUD operations for student and course data\r\n- Relationship management between students and courses\r\n- Academic record tracking\r\n\r\n## Architecture\r\n\r\n- **Modular Design**: OOP principles for clean, maintainable code\r\n- **Database Integration**: MySQL for data persistence\r\n- **User Interface**: Desktop GUI for easy interaction\r\n- **Separation of Concerns**: Clear division between data, business logic, and presentation\r\n\r\n## Skills Demonstrated\r\n\r\n- Java programming\r\n- MySQL database design and implementation\r\n- CRUD operations\r\n- Object-Oriented Programming\r\n- Desktop application development\r\n- NetBeans IDE usage\r\n- MySQL Workbench for database management\r\n\r\n## Related pages\r\n\r\n- [[Utkarsh Sharma]]\r\n- [[Projects]]\r\n- [[Java]]\r\n- [[MySQL]]\r\n",
+      "tags": [],
+      "links": [
+        "utkarsh-sharma",
+        "projects",
+        "java",
+        "mysql"
+      ],
+      "filepath": "C:\\Users\\admin\\OneDrive\\Pictures\\llm-portfolio\\wiki\\cafe-and-university-management-systems.md"
+    },
+    {
+      "slug": "ai-ml",
+      "title": "AI/ML",
+      "summary": "Artificial Intelligence and Machine Learning domain covering large language models, retrieval-augmented generation, prompt engineering, and related technologies.",
+      "content": "# AI/ML\n\n**Summary**: Artificial Intelligence and Machine Learning domain covering large language models, retrieval-augmented generation, prompt engineering, and related technologies.\n\n**Sources**:\n- raw/Utkarsh Sharma.md\n\n**Last updated**: 2026-08-26\n\n---\n\n## Overview\n\nAI/ML (Artificial Intelligence/Machine Learning) is a field of computer science focused on building systems that can perform tasks typically requiring human intelligence. This includes learning from data, recognizing patterns, making decisions, and understanding natural language.\n\n(source: Utkarsh Sharma.md)\n\n## Key Technologies\n\n### Large Language Models (LLMs)\n- Advanced AI models trained on vast amounts of text data\n- Capable of understanding and generating human-like text\n- Used for various NLP tasks\n\n### Retrieval-Augmented Generation (RAG)\n- Combines information retrieval with text generation\n- Enables AI systems to answer questions based on specific documents\n- Uses semantic search and vector databases\n\n### Prompt Engineering\n- The practice of designing and optimizing prompts for LLMs\n- Ensures accurate, relevant, and useful responses\n- Context-aware prompt pipelines improve response quality\n\n### LangChain\n- Framework for building applications with LLMs\n- Provides tools for document loading, text splitting, embeddings, and vector storage\n- Simplifies the development of RAG systems\n\n(source: Utkarsh Sharma.md)\n\n## Applications\n\n- Document Q&A systems\n- Chatbots and virtual assistants\n- Content generation\n- Text classification\n- Information extraction\n\n## Related pages\n\n- [[Utkarsh Sharma]]\n- [[RAG Book Assistant]]\n- [[Fun Chat Bot]]\n- [[PDF Invoice Data Extraction & Automation]]\n",
+      "tags": [],
+      "links": [
+        "utkarsh-sharma",
+        "rag-book-assistant",
+        "fun-chat-bot",
+        "pdf-invoice-data-extraction-automation"
+      ],
+      "filepath": "C:\\Users\\admin\\OneDrive\\Pictures\\llm-portfolio\\wiki\\ai-ml.md"
+    }
+  ],
+  "links": [
+    {
+      "source_slug": "utkarsh-sharma",
+      "target_slug": "ai-ml"
+    },
+    {
+      "source_slug": "utkarsh-sharma",
+      "target_slug": "data-science"
+    },
+    {
+      "source_slug": "utkarsh-sharma",
+      "target_slug": "python"
+    },
+    {
+      "source_slug": "utkarsh-sharma",
+      "target_slug": "projects"
+    },
+    {
+      "source_slug": "utkarsh-sharma",
+      "target_slug": "experience"
+    },
+    {
+      "source_slug": "utkarsh-sharma",
+      "target_slug": "education"
+    },
+    {
+      "source_slug": "traffic-flow-prediction",
+      "target_slug": "utkarsh-sharma"
+    },
+    {
+      "source_slug": "traffic-flow-prediction",
+      "target_slug": "projects"
+    },
+    {
+      "source_slug": "traffic-flow-prediction",
+      "target_slug": "python"
+    },
+    {
+      "source_slug": "traffic-flow-prediction",
+      "target_slug": "data-science"
+    },
+    {
+      "source_slug": "traffic-flow-prediction",
+      "target_slug": "scikit-learn"
+    },
+    {
+      "source_slug": "rag-book-assistant",
+      "target_slug": "utkarsh-sharma"
+    },
+    {
+      "source_slug": "rag-book-assistant",
+      "target_slug": "projects"
+    },
+    {
+      "source_slug": "rag-book-assistant",
+      "target_slug": "python"
+    },
+    {
+      "source_slug": "rag-book-assistant",
+      "target_slug": "ai-ml"
+    },
+    {
+      "source_slug": "rag-book-assistant",
+      "target_slug": "streamlit"
+    },
+    {
+      "source_slug": "python",
+      "target_slug": "utkarsh-sharma"
+    },
+    {
+      "source_slug": "python",
+      "target_slug": "ai-ml"
+    },
+    {
+      "source_slug": "python",
+      "target_slug": "data-science"
+    },
+    {
+      "source_slug": "python",
+      "target_slug": "pdf-invoice-data-extraction-automation"
+    },
+    {
+      "source_slug": "python",
+      "target_slug": "rag-book-assistant"
+    },
+    {
+      "source_slug": "python",
+      "target_slug": "traffic-flow-prediction"
+    },
+    {
+      "source_slug": "python",
+      "target_slug": "fun-chat-bot"
+    },
+    {
+      "source_slug": "projects",
+      "target_slug": "utkarsh-sharma"
+    },
+    {
+      "source_slug": "projects",
+      "target_slug": "ai-ml"
+    },
+    {
+      "source_slug": "projects",
+      "target_slug": "data-science"
+    },
+    {
+      "source_slug": "projects",
+      "target_slug": "python"
+    },
+    {
+      "source_slug": "projects",
+      "target_slug": "experience"
+    },
+    {
+      "source_slug": "projects",
+      "target_slug": "education"
+    },
+    {
+      "source_slug": "pdf-invoice-data-extraction-automation",
+      "target_slug": "utkarsh-sharma"
+    },
+    {
+      "source_slug": "pdf-invoice-data-extraction-automation",
+      "target_slug": "projects"
+    },
+    {
+      "source_slug": "pdf-invoice-data-extraction-automation",
+      "target_slug": "python"
+    },
+    {
+      "source_slug": "pdf-invoice-data-extraction-automation",
+      "target_slug": "ai-ml"
+    },
+    {
+      "source_slug": "ola-data-analysis",
+      "target_slug": "utkarsh-sharma"
+    },
+    {
+      "source_slug": "ola-data-analysis",
+      "target_slug": "projects"
+    },
+    {
+      "source_slug": "ola-data-analysis",
+      "target_slug": "data-science"
+    },
+    {
+      "source_slug": "ola-data-analysis",
+      "target_slug": "power-bi"
+    },
+    {
+      "source_slug": "ola-data-analysis",
+      "target_slug": "mysql"
+    },
+    {
+      "source_slug": "markdown-personal-wiki-mcp",
+      "target_slug": "page-name"
+    },
+    {
+      "source_slug": "markdown-personal-wiki-mcp",
+      "target_slug": "utkarsh-sharma"
+    },
+    {
+      "source_slug": "markdown-personal-wiki-mcp",
+      "target_slug": "projects"
+    },
+    {
+      "source_slug": "markdown-personal-wiki-mcp",
+      "target_slug": "ai-ml"
+    },
+    {
+      "source_slug": "markdown-personal-wiki-mcp",
+      "target_slug": "python"
+    },
+    {
+      "source_slug": "log",
+      "target_slug": "page-name"
+    },
+    {
+      "source_slug": "log",
+      "target_slug": "markdown-personal-wiki-mcp"
+    },
+    {
+      "source_slug": "log",
+      "target_slug": "utkarsh20sharma"
+    },
+    {
+      "source_slug": "log",
+      "target_slug": "utkarsh-sharma"
+    },
+    {
+      "source_slug": "log",
+      "target_slug": "projects"
+    },
+    {
+      "source_slug": "log",
+      "target_slug": "index"
+    },
+    {
+      "source_slug": "log",
+      "target_slug": "ai-ml"
+    },
+    {
+      "source_slug": "log",
+      "target_slug": "data-science"
+    },
+    {
+      "source_slug": "log",
+      "target_slug": "python"
+    },
+    {
+      "source_slug": "log",
+      "target_slug": "pdf-invoice-data-extraction-automation"
+    },
+    {
+      "source_slug": "log",
+      "target_slug": "rag-book-assistant"
+    },
+    {
+      "source_slug": "log",
+      "target_slug": "traffic-flow-prediction"
+    },
+    {
+      "source_slug": "log",
+      "target_slug": "cafe-and-university-management-systems"
+    },
+    {
+      "source_slug": "log",
+      "target_slug": "ola-data-analysis"
+    },
+    {
+      "source_slug": "log",
+      "target_slug": "fun-chat-bot"
+    },
+    {
+      "source_slug": "log",
+      "target_slug": "experience"
+    },
+    {
+      "source_slug": "log",
+      "target_slug": "education"
+    },
+    {
+      "source_slug": "index",
+      "target_slug": "utkarsh-sharma"
+    },
+    {
+      "source_slug": "index",
+      "target_slug": "log"
+    },
+    {
+      "source_slug": "index",
+      "target_slug": "ai-ml"
+    },
+    {
+      "source_slug": "index",
+      "target_slug": "data-science"
+    },
+    {
+      "source_slug": "index",
+      "target_slug": "python"
+    },
+    {
+      "source_slug": "index",
+      "target_slug": "projects"
+    },
+    {
+      "source_slug": "index",
+      "target_slug": "pdf-invoice-data-extraction-automation"
+    },
+    {
+      "source_slug": "index",
+      "target_slug": "rag-book-assistant"
+    },
+    {
+      "source_slug": "index",
+      "target_slug": "traffic-flow-prediction"
+    },
+    {
+      "source_slug": "index",
+      "target_slug": "cafe-and-university-management-systems"
+    },
+    {
+      "source_slug": "index",
+      "target_slug": "ola-data-analysis"
+    },
+    {
+      "source_slug": "index",
+      "target_slug": "fun-chat-bot"
+    },
+    {
+      "source_slug": "index",
+      "target_slug": "markdown-personal-wiki-mcp"
+    },
+    {
+      "source_slug": "index",
+      "target_slug": "experience"
+    },
+    {
+      "source_slug": "index",
+      "target_slug": "education"
+    },
+    {
+      "source_slug": "fun-chat-bot",
+      "target_slug": "utkarsh-sharma"
+    },
+    {
+      "source_slug": "fun-chat-bot",
+      "target_slug": "projects"
+    },
+    {
+      "source_slug": "fun-chat-bot",
+      "target_slug": "python"
+    },
+    {
+      "source_slug": "fun-chat-bot",
+      "target_slug": "ai-ml"
+    },
+    {
+      "source_slug": "fun-chat-bot",
+      "target_slug": "streamlit"
+    },
+    {
+      "source_slug": "experience",
+      "target_slug": "utkarsh-sharma"
+    },
+    {
+      "source_slug": "experience",
+      "target_slug": "projects"
+    },
+    {
+      "source_slug": "experience",
+      "target_slug": "ai-ml"
+    },
+    {
+      "source_slug": "experience",
+      "target_slug": "data-science"
+    },
+    {
+      "source_slug": "experience",
+      "target_slug": "education"
+    },
+    {
+      "source_slug": "education",
+      "target_slug": "utkarsh-sharma"
+    },
+    {
+      "source_slug": "education",
+      "target_slug": "experience"
+    },
+    {
+      "source_slug": "education",
+      "target_slug": "projects"
+    },
+    {
+      "source_slug": "education",
+      "target_slug": "ai-ml"
+    },
+    {
+      "source_slug": "education",
+      "target_slug": "data-science"
+    },
+    {
+      "source_slug": "data-science",
+      "target_slug": "utkarsh-sharma"
+    },
+    {
+      "source_slug": "data-science",
+      "target_slug": "python"
+    },
+    {
+      "source_slug": "data-science",
+      "target_slug": "traffic-flow-prediction"
+    },
+    {
+      "source_slug": "data-science",
+      "target_slug": "ola-data-analysis"
+    },
+    {
+      "source_slug": "cafe-and-university-management-systems",
+      "target_slug": "utkarsh-sharma"
+    },
+    {
+      "source_slug": "cafe-and-university-management-systems",
+      "target_slug": "projects"
+    },
+    {
+      "source_slug": "cafe-and-university-management-systems",
+      "target_slug": "java"
+    },
+    {
+      "source_slug": "cafe-and-university-management-systems",
+      "target_slug": "mysql"
+    },
+    {
+      "source_slug": "ai-ml",
+      "target_slug": "utkarsh-sharma"
+    },
+    {
+      "source_slug": "ai-ml",
+      "target_slug": "rag-book-assistant"
+    },
+    {
+      "source_slug": "ai-ml",
+      "target_slug": "fun-chat-bot"
+    },
+    {
+      "source_slug": "ai-ml",
+      "target_slug": "pdf-invoice-data-extraction-automation"
+    }
+  ]
+}

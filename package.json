@@ -1,0 +1,31 @@
+{
+  "name": "llm-portfolio-mcp-server",
+  "version": "1.0.0",
+  "description": "Node.js MCP Server & PostgreSQL Knowledge Graph Indexer for Personal Markdown Portfolio Wiki",
+  "main": "src/server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/server.js",
+    "index": "node src/indexer.js",
+    "dev": "node --watch src/server.js"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "knowledge-graph",
+    "markdown-wiki",
+    "postgresql",
+    "claude-connector",
+    "render"
+  ],
+  "author": "Utkarsh Sharma",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.6.0",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "glob": "^11.0.1",
+    "gray-matter": "^4.0.3",
+    "pg": "^8.13.3"
+  }
+}
