@@ -286,7 +286,7 @@ async function startHttpServer() {
     }
 
     if (transport) {
-      await transport.handlePostMessage(req, res);
+      await transport.handlePostMessage(req, res, req.body);
     } else {
       res.status(400).json({ error: `Session ${sessionId || 'unknown'} not found or expired.` });
     }
