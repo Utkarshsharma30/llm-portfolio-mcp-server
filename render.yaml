@@ -1,5 +1,5 @@
 services:
-  # MCP Server 1: All Tiers (Tier 1 + Tier 2 + Tier 3) - Full Access
+  # MCP Server 1: Tier 1 Data Only (Project Details Only)
   - type: web
     name: llm-portfolio-mcp1
     env: node
@@ -15,13 +15,13 @@ services:
       - key: SERVER_NAME
         value: llm-portfolio-mcp1
       - key: ALLOWED_TIERS
-        value: "1,2,3"
+        value: "1"
       - key: DATABASE_URL
         fromDatabase:
           name: portfolio-wiki-db
           property: connectionString
 
-  # MCP Server 2: Tier 2 & Tier 3 Data Only
+  # MCP Server 2: Tier 1 & Tier 2 Data (Projects + Skills & Introduction)
   - type: web
     name: llm-portfolio-mcp2
     env: node
@@ -37,13 +37,13 @@ services:
       - key: SERVER_NAME
         value: llm-portfolio-mcp2
       - key: ALLOWED_TIERS
-        value: "2,3"
+        value: "1,2"
       - key: DATABASE_URL
         fromDatabase:
           name: portfolio-wiki-db
           property: connectionString
 
-  # MCP Server 3: Tier 3 Data Only (Confidential / Sensitive Data Only)
+  # MCP Server 3: Tier 1, Tier 2 & Tier 3 Data (Projects + Skills + Contact Details & Personal Data - Full Access)
   - type: web
     name: llm-portfolio-mcp3
     env: node
@@ -59,7 +59,7 @@ services:
       - key: SERVER_NAME
         value: llm-portfolio-mcp3
       - key: ALLOWED_TIERS
-        value: "3"
+        value: "1,2,3"
       - key: DATABASE_URL
         fromDatabase:
           name: portfolio-wiki-db

@@ -1,5 +1,5 @@
 ---
-tier: 2
+tier: 1
 ---
 
 # RAG Book Assistant

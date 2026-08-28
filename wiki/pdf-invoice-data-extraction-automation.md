@@ -1,5 +1,5 @@
 ---
-tier: 2
+tier: 1
 ---
 
 # PDF Invoice Data Extraction & Automation

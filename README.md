@@ -3,19 +3,19 @@
 An end-to-end Markdown-based personal wiki with pages, tags, and a bidirectional knowledge graph built following the **Karpathy pattern**:
 `Raw Sources → Structured Wiki → Knowledge Graph (PostgreSQL) → Query Flow (MCP Tools / Claude Connector)`
 
-Features **Tier-Based Access Control** (Tiers 1, 2, 3) across 3 remote MCP servers on Render.
+Features **Progressive Tier-Based Access Control** (Tiers 1, 2, 3) across 3 remote MCP servers on Render.
 
 ---
 
-## 🔒 Tier-Based Access Control Architecture
+## 🔒 Progressive Tier Access Boundaries
 
-The wiki knowledge base is categorized into 3 security tiers:
+The wiki knowledge base is structured into 3 progressive access tiers:
 
 | Tier Level | Access Boundary Scope | Description & Contents | Example Pages |
 | :--- | :--- | :--- | :--- |
-| **Tier 1** | **Public Portfolio** | High-level profile, core skills, public projects overview, education | `index.md`, `utkarsh-sharma.md`, `projects.md`, `education.md`, `ai-ml.md`, `python.md` |
-| **Tier 2** | **Internal & Operational** | Detailed project specs, internship logs, architecture walkthroughs | `experience.md`, `log.md`, `pdf-invoice-data-extraction-automation.md`, `rag-book-assistant.md`, `markdown-personal-wiki-mcp.md` |
-| **Tier 3** | **Confidential & Raw** | Raw source clippings, internal contact details, raw notes | `raw/Utkarsh Sharma.md`, confidential notes |
+| **Tier 1** | **Project Details Only** | Project descriptions, tech stacks, OCR automation, RAG book assistant | `projects.md`, `rag-book-assistant.md`, `markdown-personal-wiki-mcp.md`, `pdf-invoice...`, `ola-data...` |
+| **Tier 2** | **Tier 1 + Skills & Introduction** | Profile overview, core skills (AI/ML, Python, Data Science), education | `utkarsh-sharma.md`, `ai-ml.md`, `python.md`, `data-science.md`, `education.md`, `index.md` |
+| **Tier 3** | **Tier 1 + Tier 2 + Personal & Contact Details** | Work experience, internship logs, contact information, raw source notes | `experience.md`, `log.md`, `raw/Utkarsh Sharma.md` |
 
 ---
 
@@ -23,16 +23,16 @@ The wiki knowledge base is categorized into 3 security tiers:
 
 | Server | Render Service URL | Environment Variable | Permitted Data Scope |
 | :--- | :--- | :--- | :--- |
-| **MCP Server 1** | `https://llm-portfolio-mcp1.onrender.com/sse` | `ALLOWED_TIERS=1,2,3` | **All Tiers** (Tier 1 + Tier 2 + Tier 3) |
-| **MCP Server 2** | `https://llm-portfolio-mcp2.onrender.com/sse` | `ALLOWED_TIERS=2,3` | **Tier 2 & Tier 3** Data |
-| **MCP Server 3** | `https://llm-portfolio-mcp3.onrender.com/sse` | `ALLOWED_TIERS=3` | **Tier 3 Only** Data |
+| **MCP Server 1** | `https://llm-portfolio-mcp1.onrender.com/sse` | `ALLOWED_TIERS=1` | **Project Details Only** (Tier 1) |
+| **MCP Server 2** | `https://llm-portfolio-mcp2.onrender.com/sse` | `ALLOWED_TIERS=1,2` | **Projects + Skills & Introduction** (Tiers 1 & 2) |
+| **MCP Server 3** | `https://llm-portfolio-mcp3.onrender.com/sse` | `ALLOWED_TIERS=1,2,3` | **Full Access** (Projects + Skills + Personal & Contact Details) |
 
 ---
 
 ## 🌟 Key Features
 
 1. **Karpathy Ingestion Pattern**:
-   - `raw/`: Unstructured source document clippings (`Utkarsh Sharma.md` + dedicated project files).
+   - `raw/`: Unstructured source document clippings (`Utkarsh Sharma.md`).
    - `wiki/`: Structured, cross-referenced Markdown concept and project pages.
    - `PostgreSQL / JSON Index`: Automated relational full-text search (`tsvector`) and bidirectional graph edge table.
    - `MCP Tools`: Live query flow for LLMs and custom connectors.
@@ -43,7 +43,7 @@ The wiki knowledge base is categorized into 3 security tiers:
    - `get_link_graph`: Query incoming/outgoing link connections or full knowledge graph topology restricted to permitted tiers.
    - `list_pages`: List all indexed pages filtered by tag and server tier level.
 
-3. **Public Cloud Deployment & Live Claude Connector**:
+3. **Public Cloud Deployment & Live Claude Connectors**:
    - Production Express server with Server-Sent Events (`/sse`) transport.
    - One-click multi-service deployment on Render (`render.yaml`).
    - Seamless live integration with Claude as Custom MCP Connectors.
@@ -56,15 +56,18 @@ The wiki knowledge base is categorized into 3 security tiers:
 llm-portfolio/
 ├── raw/                      # Raw source files (Tier 3)
 │   └── Utkarsh Sharma.md
-├── wiki/                     # Structured Markdown wiki pages (Tiers 1 & 2)
-│   ├── index.md              # Master Table of Contents (Tier 1)
-│   ├── utkarsh-sharma.md     # Profile summary page (Tier 1)
+├── wiki/                     # Structured Markdown wiki pages (Tiers 1, 2, 3)
 │   ├── projects.md           # Projects list overview (Tier 1)
-│   ├── markdown-personal-wiki-mcp.md # Detailed project page (Tier 2)
-│   ├── rag-book-assistant.md (Tier 2)
-│   ├── ai-ml.md (Tier 1)
-│   ├── python.md (Tier 1)
-│   └── log.md                # Operation log (Tier 2)
+│   ├── markdown-personal-wiki-mcp.md # Dedicated project page (Tier 1)
+│   ├── rag-book-assistant.md (Tier 1)
+│   ├── pdf-invoice-data-extraction-automation.md (Tier 1)
+│   ├── utkarsh-sharma.md     # Profile summary page (Tier 2)
+│   ├── ai-ml.md (Tier 2)
+│   ├── python.md (Tier 2)
+│   ├── data-science.md (Tier 2)
+│   ├── education.md (Tier 2)
+│   ├── experience.md (Tier 3)
+│   └── log.md                # Operation log (Tier 3)
 ├── db/
 │   └── schema.sql            # PostgreSQL schema with tsvector, tier column, & graph tables
 ├── src/
@@ -101,7 +104,7 @@ DATABASE_URL=postgres://postgres:postgres@localhost:5432/portfolio_wiki
 
 ### 3. Run Knowledge Graph Indexer
 
-Scan the `wiki/` and `raw/` directories, parse wikilinks (`[[page-slug]]`), extract tags and tier metadata, and build PostgreSQL tables (or JSON index):
+Scan `wiki/` and `raw/` directories, parse wikilinks (`[[page-slug]]`), extract tags and tier metadata, and build PostgreSQL tables (or JSON index):
 
 ```bash
 npm run index
@@ -131,9 +134,9 @@ This repository includes a pre-configured `render.yaml` blueprint provisioning 3
 2. Click **New +** -> **Blueprint**.
 3. Select this repository. Render will automatically provision:
    - Shared **PostgreSQL Database** (`portfolio-wiki-db`)
-   - **MCP Server 1** (`llm-portfolio-mcp1` - `ALLOWED_TIERS=1,2,3`)
-   - **MCP Server 2** (`llm-portfolio-mcp2` - `ALLOWED_TIERS=2,3`)
-   - **MCP Server 3** (`llm-portfolio-mcp3` - `ALLOWED_TIERS=3`)
+   - **MCP Server 1** (`llm-portfolio-mcp1` - `ALLOWED_TIERS=1`: Project Details Only)
+   - **MCP Server 2** (`llm-portfolio-mcp2` - `ALLOWED_TIERS=1,2`: Projects + Skills & Intro)
+   - **MCP Server 3** (`llm-portfolio-mcp3` - `ALLOWED_TIERS=1,2,3`: Projects + Skills + Personal/Contact Details)
 
 ---
 
@@ -141,6 +144,6 @@ This repository includes a pre-configured `render.yaml` blueprint provisioning 3
 
 Connect any of the 3 remote MCP servers to Claude as Custom MCP Connectors:
 
-- **Full Access Connector (MCP 1)**: `https://llm-portfolio-mcp1.onrender.com/sse`
-- **Internal Access Connector (MCP 2)**: `https://llm-portfolio-mcp2.onrender.com/sse`
-- **Confidential Access Connector (MCP 3)**: `https://llm-portfolio-mcp3.onrender.com/sse`
+- **Public Projects Connector (MCP 1)**: `https://llm-portfolio-mcp1.onrender.com/sse`
+- **Internal Skills & Intro Connector (MCP 2)**: `https://llm-portfolio-mcp2.onrender.com/sse`
+- **Full Personal & Contact Connector (MCP 3)**: `https://llm-portfolio-mcp3.onrender.com/sse`

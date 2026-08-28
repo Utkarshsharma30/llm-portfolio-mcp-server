@@ -87,15 +87,24 @@ export function parseMarkdownFile(fileContent, filePath) {
     }
   }
   
-  // Determine Access Tier (Tier 1, 2, or 3)
+  // Determine Access Tier (Tier 1: Projects, Tier 2: Skills/Intro, Tier 3: Personal/Contact/Experience)
   let tier = parseInt(data.tier, 10);
   if (isNaN(tier)) {
     const isRaw = filePath.includes('raw') || filePath.includes('raw/');
-    if (isRaw) {
+    if (isRaw || slug === 'experience' || slug === 'log') {
       tier = 3;
     } else {
-      const tier2Slugs = ['experience', 'log', 'pdf-invoice-data-extraction-automation', 'rag-book-assistant', 'markdown-personal-wiki-mcp'];
-      tier = tier2Slugs.includes(slug) ? 2 : 1;
+      const projectSlugs = [
+        'projects', 
+        'pdf-invoice-data-extraction-automation', 
+        'rag-book-assistant', 
+        'markdown-personal-wiki-mcp', 
+        'traffic-flow-prediction', 
+        'cafe-and-university-management-systems', 
+        'ola-data-analysis', 
+        'fun-chat-bot'
+      ];
+      tier = projectSlugs.includes(slug) ? 1 : 2;
     }
   }
 
