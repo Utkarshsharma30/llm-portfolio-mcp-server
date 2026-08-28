@@ -160,9 +160,16 @@ async function startHttpServer() {
   }));
 
   app.use(express.json());
+  app.use(express.urlencoded({ extended: true }));
 
   // Store active SSE transports by sessionId
   const transports = new Map();
+
+  const getBaseUrl = (req) => {
+    const host = req.headers['x-forwarded-host'] || req.headers.host || `localhost:${PORT}`;
+    const proto = req.headers['x-forwarded-proto'] || (req.secure ? 'https' : 'http');
+    return `${proto}://${host}`;
+  };
 
   // Root endpoint info & SSE redirect fallback
   app.get('/', (req, res) => {
@@ -171,13 +178,54 @@ async function startHttpServer() {
       status: 'active',
       mcp_sse_endpoint: '/sse',
       health_check: '/health',
-      auth: 'none'
+      auth: 'supported'
     });
   });
 
-  // Explicit handling for OAuth discovery endpoints to inform Claude OAuth is not required
-  app.get(['/.well-known/oauth-authorization-server', '/.well-known/openid-configuration'], (req, res) => {
-    res.status(404).json({ error: 'OAuth authentication is not enabled on this public MCP server.' });
+  // OAuth 2.0 Discovery Endpoints (RFC 8414 & RFC 9728) for seamless Claude Custom Connector registration
+  app.get(['/.well-known/oauth-authorization-server', '/.well-known/openid-configuration', '/.well-known/mcp-configuration'], (req, res) => {
+    const baseUrl = getBaseUrl(req);
+    res.json({
+      issuer: baseUrl,
+      authorization_endpoint: `${baseUrl}/oauth/authorize`,
+      token_endpoint: `${baseUrl}/oauth/token`,
+      registration_endpoint: `${baseUrl}/oauth/register`,
+      scopes_supported: ['mcp'],
+      response_types_supported: ['code'],
+      grant_types_supported: ['authorization_code', 'client_credentials'],
+      token_endpoint_auth_methods_supported: ['none', 'client_secret_post']
+    });
+  });
+
+  // Dynamic Client Registration (RFC 7591)
+  app.post(['/oauth/register', '/register'], (req, res) => {
+    res.status(201).json({
+      client_id: 'llm_portfolio_mcp_client',
+      client_secret: 'llm_portfolio_mcp_secret',
+      client_id_issued_at: Math.floor(Date.now() / 1000),
+      client_secret_expires_at: 0
+    });
+  });
+
+  // OAuth Authorization Endpoint (Auto-approves and redirects back to Claude)
+  app.get(['/oauth/authorize', '/authorize'], (req, res) => {
+    const { redirect_uri, state } = req.query;
+    if (redirect_uri) {
+      const targetUrl = new URL(String(redirect_uri));
+      targetUrl.searchParams.set('code', 'mcp_auth_code_success');
+      if (state) targetUrl.searchParams.set('state', String(state));
+      return res.redirect(targetUrl.toString());
+    }
+    res.send('Authorization granted for LLM Portfolio MCP Server.');
+  });
+
+  // OAuth Token Endpoint
+  app.post(['/oauth/token', '/token'], (req, res) => {
+    res.json({
+      access_token: 'mcp_access_token_valid',
+      token_type: 'Bearer',
+      expires_in: 86400
+    });
   });
 
   // Health check endpoint for Render monitoring
