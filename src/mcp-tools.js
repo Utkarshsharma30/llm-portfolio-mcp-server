@@ -35,7 +35,123 @@ function getFallbackData() {
 }
 
 /**
- * MCP Tool Handler: search_wiki (Tier-restricted)
+ * Builds a Map of slug -> tier and array of all pages for tier checking
+ */
+async function getPageTierInfo() {
+  const slugToTier = new Map();
+  let allPages = [];
+
+  if (db.pool) {
+    try {
+      const res = await query('SELECT slug, title, tier FROM pages');
+      allPages = res.rows;
+      for (const r of res.rows) {
+        slugToTier.set(r.slug, r.tier);
+      }
+      return { slugToTier, allPages };
+    } catch (err) {
+      console.warn('PostgreSQL getPageTierInfo failed, using fallback index:', err.message);
+    }
+  }
+
+  const fallback = getFallbackData();
+  allPages = fallback.pages;
+  for (const p of fallback.pages) {
+    slugToTier.set(p.slug, p.tier || 1);
+  }
+  return { slugToTier, allPages };
+}
+
+/**
+ * Sanitizes markdown content by removing any references, wikilinks, lines, or mentions of pages
+ * belonging to restricted access tiers for the current server instance.
+ */
+export function sanitizeContent(content, allowedTiers, slugToTier, allPages = []) {
+  if (!content) return '';
+
+  const restrictedSlugsAndTitles = [];
+  for (const [slug, tier] of slugToTier.entries()) {
+    if (!allowedTiers.includes(tier)) {
+      restrictedSlugsAndTitles.push(slug);
+      const pageObj = allPages.find(p => p.slug === slug);
+      if (pageObj && pageObj.title) {
+        restrictedSlugsAndTitles.push(pageObj.title.toLowerCase());
+      }
+    }
+  }
+
+  const lines = content.split('\n');
+  const sanitizedLines = [];
+
+  for (let line of lines) {
+    let keepLine = true;
+
+    // 1. Check for wikilinks [[Target]] or [[Target|Label]]
+    const wikilinkMatches = line.match(/\[\[([^\]\|]+)(?:\|[^\]]+)?\]\]/g);
+    if (wikilinkMatches) {
+      for (const match of wikilinkMatches) {
+        const rawTarget = match.replace(/\[\[|\]\]/g, '').split('|')[0].trim();
+        const targetSlug = slugify(rawTarget);
+        const targetTier = slugToTier.get(targetSlug);
+
+        if (targetTier !== undefined && !allowedTiers.includes(targetTier)) {
+          if (line.trim().startsWith('-') || line.trim().startsWith('*') || line.trim().startsWith('#')) {
+            keepLine = false;
+            break;
+          } else {
+            line = line.replace(match, '').trim();
+          }
+        }
+      }
+    }
+
+    // 2. Check for markdown links [Label](target.md)
+    const mdLinkMatches = line.match(/\[([^\]]+)\]\(([^)]+\.md)\)/g);
+    if (mdLinkMatches && keepLine) {
+      for (const match of mdLinkMatches) {
+        const targetFileMatch = match.match(/\(([^)]+\.md)\)/);
+        if (targetFileMatch) {
+          const targetSlug = slugify(path.basename(targetFileMatch[1], '.md'));
+          const targetTier = slugToTier.get(targetSlug);
+
+          if (targetTier !== undefined && !allowedTiers.includes(targetTier)) {
+            if (line.trim().startsWith('-') || line.trim().startsWith('*') || line.trim().startsWith('#')) {
+              keepLine = false;
+              break;
+            } else {
+              line = line.replace(match, '').trim();
+            }
+          }
+        }
+      }
+    }
+
+    // 3. Strip lines or words referencing restricted titles/slugs explicitly in list items or headings
+    if (keepLine && restrictedSlugsAndTitles.length > 0) {
+      const lowerLine = line.toLowerCase();
+      for (const resItem of restrictedSlugsAndTitles) {
+        if (resItem.length > 2 && lowerLine.includes(resItem)) {
+          if (line.trim().startsWith('-') || line.trim().startsWith('*') || line.trim().startsWith('#')) {
+            keepLine = false;
+            break;
+          } else {
+            const regex = new RegExp(`\\b${resItem.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'gi');
+            line = line.replace(regex, '').trim();
+          }
+        }
+      }
+    }
+
+    if (keepLine && line.trim().length > 0) {
+      sanitizedLines.push(line);
+    }
+  }
+
+  return sanitizedLines.join('\n');
+}
+
+/**
+ * MCP Tool Handler: search_wiki (Tier-restricted, Query Guarded & Content Sanitized)
  */
 export async function searchWiki({ query_text, limit = 10 }) {
   if (!query_text) {
@@ -43,6 +159,19 @@ export async function searchWiki({ query_text, limit = 10 }) {
   }
 
   const allowedTiers = getAllowedTiers();
+  const { slugToTier, allPages } = await getPageTierInfo();
+
+  // Guard: If the query_text directly targets a restricted slug/title, return 0 results immediately
+  const querySlug = slugify(query_text);
+  const queryTier = slugToTier.get(querySlug);
+  if (queryTier !== undefined && !allowedTiers.includes(queryTier)) {
+    return {
+      query: query_text,
+      server_permitted_tiers: allowedTiers,
+      results_count: 0,
+      results: []
+    };
+  }
 
   // 1. PostgreSQL Search
   if (db.pool) {
@@ -54,6 +183,7 @@ export async function searchWiki({ query_text, limit = 10 }) {
           summary, 
           tags,
           tier,
+          content,
           ts_rank_cd(search_vector, websearch_to_tsquery('english', $1)) AS rank,
           ts_headline('english', content, websearch_to_tsquery('english', $1), 'StartSel=**, StopSel=**, MaxWords=35, MinWords=15') AS headline
         FROM pages
@@ -70,19 +200,21 @@ export async function searchWiki({ query_text, limit = 10 }) {
       const res = await query(sql, [query_text, allowedTiers, limit]);
       
       if (res.rows.length > 0) {
+        const sanitizedResults = res.rows.map(r => ({
+          slug: r.slug,
+          title: r.title,
+          summary: sanitizeContent(r.summary, allowedTiers, slugToTier, allPages),
+          tier: r.tier,
+          snippet: sanitizeContent(r.headline || r.summary, allowedTiers, slugToTier, allPages),
+          tags: r.tags,
+          rank: r.rank
+        })).filter(r => r.summary.length > 0 || r.snippet.length > 0);
+
         return {
           query: query_text,
           server_permitted_tiers: allowedTiers,
-          results_count: res.rows.length,
-          results: res.rows.map(r => ({
-            slug: r.slug,
-            title: r.title,
-            summary: r.summary,
-            tier: r.tier,
-            snippet: r.headline || r.summary,
-            tags: r.tags,
-            rank: r.rank
-          }))
+          results_count: sanitizedResults.length,
+          results: sanitizedResults
         };
       }
     } catch (err) {
@@ -105,11 +237,12 @@ export async function searchWiki({ query_text, limit = 10 }) {
     .map(p => ({
       slug: p.slug,
       title: p.title,
-      summary: p.summary,
+      summary: sanitizeContent(p.summary, allowedTiers, slugToTier, allPages),
       tier: p.tier || 1,
-      snippet: p.summary || p.content.slice(0, 200) + '...',
+      snippet: sanitizeContent(p.summary || p.content.slice(0, 200) + '...', allowedTiers, slugToTier, allPages),
       tags: p.tags
-    }));
+    }))
+    .filter(p => p.summary.length > 0 || p.snippet.length > 0);
 
   return {
     query: query_text,
@@ -120,7 +253,7 @@ export async function searchWiki({ query_text, limit = 10 }) {
 }
 
 /**
- * MCP Tool Handler: get_page (Tier-restricted)
+ * MCP Tool Handler: get_page (Strict Tier Boundary & Fully Sanitized Content)
  */
 export async function getPage({ slug_or_title }) {
   if (!slug_or_title) {
@@ -129,6 +262,7 @@ export async function getPage({ slug_or_title }) {
 
   const allowedTiers = getAllowedTiers();
   const targetSlug = slugify(slug_or_title);
+  const { slugToTier, allPages } = await getPageTierInfo();
 
   // 1. PostgreSQL Lookup
   if (db.pool) {
@@ -137,12 +271,11 @@ export async function getPage({ slug_or_title }) {
       if (pageRes.rows.length > 0) {
         const page = pageRes.rows[0];
 
-        // Access boundary check
+        // Access boundary check - Return standard 404 error if tier is restricted so no metadata leaks!
         if (!allowedTiers.includes(page.tier)) {
           return {
             found: false,
-            access_denied: true,
-            error: `Access Denied: Page '${page.slug}' is categorized as Tier ${page.tier}. This MCP server instance only permits Tiers: [${allowedTiers.join(', ')}].`
+            error: `Page '${slug_or_title}' not found in travel wiki.`
           };
         }
 
@@ -165,10 +298,10 @@ export async function getPage({ slug_or_title }) {
           found: true,
           slug: page.slug,
           title: page.title,
-          summary: page.summary,
+          summary: sanitizeContent(page.summary, allowedTiers, slugToTier, allPages),
           tier: page.tier,
           tags: page.tags,
-          content: page.content,
+          content: sanitizeContent(page.content, allowedTiers, slugToTier, allPages),
           updated_at: page.updated_at,
           links: {
             outgoing: outRes.rows.map(r => r.target_slug),
@@ -187,11 +320,12 @@ export async function getPage({ slug_or_title }) {
   
   if (page) {
     const pageTier = page.tier || 1;
+
+    // Silent restriction: Return standard 404 if tier is restricted
     if (!allowedTiers.includes(pageTier)) {
       return {
         found: false,
-        access_denied: true,
-        error: `Access Denied: Page '${page.slug}' is categorized as Tier ${pageTier}. This MCP server instance only permits Tiers: [${allowedTiers.join(', ')}].`
+        error: `Page '${slug_or_title}' not found in travel wiki.`
       };
     }
 
@@ -209,10 +343,10 @@ export async function getPage({ slug_or_title }) {
       found: true,
       slug: page.slug,
       title: page.title,
-      summary: page.summary,
+      summary: sanitizeContent(page.summary, allowedTiers, slugToTier, allPages),
       tier: pageTier,
       tags: page.tags,
-      content: page.content,
+      content: sanitizeContent(page.content, allowedTiers, slugToTier, allPages),
       links: {
         outgoing,
         backlinks
@@ -222,12 +356,12 @@ export async function getPage({ slug_or_title }) {
 
   return {
     found: false,
-    error: `Page '${slug_or_title}' not found in portfolio wiki.`
+    error: `Page '${slug_or_title}' not found in travel wiki.`
   };
 }
 
 /**
- * MCP Tool Handler: get_link_graph (Tier-restricted)
+ * MCP Tool Handler: get_link_graph (Strict Tier Boundary)
  */
 export async function getLinkGraph({ slug }) {
   const allowedTiers = getAllowedTiers();
@@ -253,7 +387,7 @@ export async function getLinkGraph({ slug }) {
     };
   }
 
-  // Full Graph Topology (Filtered by Allowed Tiers)
+  // Full Graph Topology (Strictly Filtered by Allowed Tiers)
   if (db.pool) {
     try {
       const res = await query(`
@@ -286,10 +420,11 @@ export async function getLinkGraph({ slug }) {
 }
 
 /**
- * MCP Tool Handler: list_pages (Tier-restricted)
+ * MCP Tool Handler: list_pages (Strict Tier Boundary & Sanitized Summaries)
  */
 export async function listPages({ tag }) {
   const allowedTiers = getAllowedTiers();
+  const { slugToTier, allPages } = await getPageTierInfo();
 
   if (db.pool) {
     try {
@@ -306,7 +441,10 @@ export async function listPages({ tag }) {
         server_permitted_tiers: allowedTiers,
         total_pages: res.rows.length,
         filter_tag: tag || null,
-        pages: res.rows
+        pages: res.rows.map(r => ({
+          ...r,
+          summary: sanitizeContent(r.summary, allowedTiers, slugToTier, allPages)
+        }))
       };
     } catch (err) {
       console.warn('PostgreSQL list_pages failed, using fallback:', err.message);
@@ -327,7 +465,7 @@ export async function listPages({ tag }) {
     pages: pages.map(p => ({
       slug: p.slug,
       title: p.title,
-      summary: p.summary,
+      summary: sanitizeContent(p.summary, allowedTiers, slugToTier, allPages),
       tier: p.tier || 1,
       tags: p.tags
     }))
