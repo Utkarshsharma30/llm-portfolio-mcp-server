@@ -15,7 +15,7 @@ const WIKI_DIR = process.env.WIKI_DIR || path.join(__dirname, '..', 'wiki');
 const FALLBACK_INDEX_PATH = path.join(__dirname, '..', 'wiki-index.json');
 
 export async function runIndexer() {
-  console.log('🚀 Starting Portfolio Knowledge Graph Indexer...');
+  console.log('🚀 Starting Travel Knowledge Graph Indexer...');
   console.log(`📂 Scanning wiki directory: ${WIKI_DIR}`);
 
   const hasDb = Boolean(db.pool);

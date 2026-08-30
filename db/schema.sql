@@ -1,4 +1,4 @@
--- Database Schema for Portfolio Knowledge Graph & MCP Server
+-- Database Schema for Travel Knowledge Graph & MCP Server
 
 -- 1. Enable UUID Extension (if available)
 CREATE EXTENSION IF NOT EXISTS "uuid-ossp";

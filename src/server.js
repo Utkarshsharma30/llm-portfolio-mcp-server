@@ -40,13 +40,13 @@ function createMcpServer() {
       tools: [
         {
           name: 'search_wiki',
-          description: 'Full-text and semantic keyword search across Utkarsh Sharma\'s personal portfolio wiki pages (projects, skills, experience, education).',
+          description: 'Full-text search across Travel Wiki pages and destinations (Asia, India, Dubai, Tokyo, Singapore, Manali, etc.).',
           inputSchema: {
             type: 'object',
             properties: {
               query_text: {
                 type: 'string',
-                description: 'Search query or keywords to locate relevant wiki pages (e.g. "RAG", "Python", "Tesseract", "Render", "PostgreSQL")',
+                description: 'Search query or keywords to locate relevant travel pages (e.g. "Dubai", "Japan", "Singapore", "Manali", "Metro")',
               },
               limit: {
                 type: 'number',
@@ -58,13 +58,13 @@ function createMcpServer() {
         },
         {
           name: 'get_page',
-          description: 'Fetch complete markdown content, summary, tags, and incoming/outgoing wikilinks for a specific wiki page by title or slug.',
+          description: 'Fetch complete markdown travel guide content, summary, tags, and incoming/outgoing wikilinks for a destination page by title or slug.',
           inputSchema: {
             type: 'object',
             properties: {
               slug_or_title: {
                 type: 'string',
-                description: 'Slug or title of the page to retrieve (e.g. "rag-book-assistant", "ai-ml", "utkarsh-sharma")',
+                description: 'Slug or title of the page to retrieve (e.g. "asia", "dubai", "japan", "singapore", "delhi")',
               },
             },
             required: ['slug_or_title'],
@@ -72,7 +72,7 @@ function createMcpServer() {
         },
         {
           name: 'get_link_graph',
-          description: 'Query bidirectional link graph relationships (backlinks and outgoing connections) for a specific page or fetch full wiki topology.',
+          description: 'Query bidirectional link graph relationships (backlinks and outgoing destination connections) for a specific travel page or fetch full graph topology.',
           inputSchema: {
             type: 'object',
             properties: {
@@ -85,13 +85,13 @@ function createMcpServer() {
         },
         {
           name: 'list_pages',
-          description: 'List all indexed pages in the portfolio wiki, optionally filtered by skill tag or category.',
+          description: 'List all indexed travel pages, optionally filtered by tag or category.',
           inputSchema: {
             type: 'object',
             properties: {
               tag: {
                 type: 'string',
-                description: 'Optional tag to filter pages by (e.g., "python", "ai-ml", "data-science")',
+                description: 'Optional tag to filter pages by (e.g., "asia", "india", "clippings")',
               },
             },
           },
@@ -246,7 +246,7 @@ async function startHttpServer() {
       if (state) targetUrl.searchParams.set('state', String(state));
       return res.redirect(targetUrl.toString());
     }
-    res.status(200).send('Authorization granted for LLM Portfolio MCP Server.');
+    res.status(200).send('Authorization granted for LLM Travel MCP Server.');
   });
 
   // OAuth Token Endpoint fallback
