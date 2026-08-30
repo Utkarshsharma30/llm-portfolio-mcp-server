@@ -1,39 +1,36 @@
 # Markdown Travel Wiki & Knowledge Graph MCP Server
 
 An end-to-end Markdown-based travel knowledge wiki with pages, tags, and a bidirectional knowledge graph built following the **Karpathy pattern**:
-`Raw Sources (Wikivoyage / Travel Clippings) → Structured Wiki → Knowledge Graph (PostgreSQL) → Query Flow (MCP Tools / Claude Connector)`
+`Raw Sources (Wikivoyage / Travel Guides) → Structured Wiki → Knowledge Graph (PostgreSQL) → Query Flow (MCP Tools / Claude Connector)`
 
-Features **Progressive Tier-Based Access Control** (Tiers 1, 2, 3) across 3 remote MCP servers on Render.
-
----
-
-## 🔒 Travel Data Tier Boundaries
-
-| Tier Level | Access Scope | Description & Contents | Example Pages |
-| :--- | :--- | :--- | :--- |
-| **Tier 1** | **Regional Overview & Index** | Regional breakdown, country overview, table of contents, quick start guide | `India.md`, `South Asia.md`, `README.md`, `Quick Start.md` |
-| **Tier 2** | **Tier 1 + Detailed Destination Guides** | Full travel guides, top attractions, metro transit, hotel recommendations | `Delhi.md` (Top 25 attractions), `Manali.md` (Hill station & adventure) |
-| **Tier 3** | **Tier 1 + Tier 2 + Raw Sources & Clippings** | Full raw Wikivoyage travel guides, Mark Wiens clippings, community guides | `raw/25 Incredible Things To Do In Delhi...`, `raw/Travellers' guide to India...` |
+Features **Tier-Based Access Boundaries** across 3 remote MCP servers on Render.
 
 ---
 
-## 🌐 Remote Render MCP Server Instances
+## 🔒 Tier Access Boundaries & Server Mapping
 
-| Server | Render Service URL | Environment Variable | Permitted Data Scope |
+The travel wiki knowledge base is categorized into 3 server access tiers:
+
+| Server Instance | Environment Config | Access Boundary Scope | Included Content & Destinations |
 | :--- | :--- | :--- | :--- |
-| **MCP Server 1** | `https://llm-portfolio-mcp1.onrender.com/sse` | `ALLOWED_TIERS=1` | **Travel Overview & Regions Only** (Tier 1) |
-| **MCP Server 2** | `https://llm-portfolio-mcp2.onrender.com/sse` | `ALLOWED_TIERS=1,2` | **Overview + Detailed Destination Guides** (Delhi & Manali) |
-| **MCP Server 3** | `https://llm-portfolio-mcp3.onrender.com/sse` | `ALLOWED_TIERS=1,2,3` | **Full Travel Access** (Overview + Guides + Raw Wikivoyage Sources) |
+| **MCP Server 1** | `ALLOWED_TIERS=1` | **Asia Countries (Excluding India)** | Asia Overview, Dubai, Japan, Singapore, Wikivoyage Asia raw guides |
+| **MCP Server 2** | `ALLOWED_TIERS=1,2` | **MCP 1 + India & States (Excluding Delhi)** | India Overview, Goa, Kerala, Maharashtra, Manali, Mumbai, Agra, Top Indian Places |
+| **MCP Server 3** | `ALLOWED_TIERS=1,2,3` | **MCP 1 + MCP 2 + Delhi (Full Access)** | Full Travel Wiki + Delhi (Top 20+ attractions, UNESCO sites, street food, transit) |
+
+---
+
+## 🌐 Remote Render MCP Server Endpoints
+
+- **MCP Server 1 (Asia Countries Excl. India)**: `https://llm-portfolio-mcp1.onrender.com/sse`
+- **MCP Server 2 (MCP 1 + India & States Excl. Delhi)**: `https://llm-portfolio-mcp2.onrender.com/sse`
+- **MCP Server 3 (MCP 1 + MCP 2 + Delhi / Full Access)**: `https://llm-portfolio-mcp3.onrender.com/sse`
 
 ---
 
 ## 🌟 Key Features
 
-1. **Karpathy Ingestion Pattern**:
-   - `raw/`: Unstructured travel source document clippings (`25 Incredible Things To Do In Delhi`, `Travellers' guide to India`, `Wikivoyage`).
-   - `wiki/`: Structured, cross-referenced Markdown travel pages (`India`, `South Asia`, `Delhi`, `Manali`).
-   - `PostgreSQL / JSON Index`: Automated relational full-text search (`tsvector`) and bidirectional graph edge table.
-   - `MCP Tools`: Live query flow for LLMs and custom connectors (`search_wiki`, `get_page`, `get_link_graph`, `list_pages`).
+1. **Clean Graph Edge Filtering**:
+   - Filtered out unnecessary graph targets (`readme`, `licence`, `index`, `quick-start`, `changelog`) to maintain a clean, high-signal destination knowledge graph topology.
 
 2. **Model Context Protocol (MCP) Tools**:
    - `search_wiki`: Full-text rank-scored search filtered by server tier permissions.
@@ -52,70 +49,39 @@ Features **Progressive Tier-Based Access Control** (Tiers 1, 2, 3) across 3 remo
 
 ```
 llm-portfolio/
-├── raw/                      # Raw source travel documents (Tier 3)
-│   ├── 25 Incredible Things To Do In Delhi, India.md
-│   ├── An Indian’s Guide to Japan.md
+├── raw/                      # Raw travel source documents
 │   ├── Asia – Travel guide at Wikivoyage.md
-│   ├── South Asia – Travel guide at Wikivoyage.md
-│   ├── Top Places To Visit In Manali.md
-│   └── Travellers' guide to India.md
-├── wiki/                     # Structured Markdown travel wiki pages (Tiers 1 & 2)
-│   ├── India.md              # Regional breakdown & country guide (Tier 1)
-│   ├── South Asia.md         # Subcontinent regional overview (Tier 1)
-│   ├── Quick Start.md        # Getting started guide (Tier 1)
-│   ├── README.md             # Master Table of Contents (Tier 1)
-│   ├── Delhi.md              # Capital city travel guide & top 25 attractions (Tier 2)
-│   └── Manali.md             # Hill station & adventure guide (Tier 2)
+│   ├── Dubai.md
+│   ├── Japan.md
+│   ├── Singapore.md
+│   ├── Agra.md
+│   ├── Explore Manali.md
+│   ├── Goa, India.md
+│   ├── Kerala.md
+│   ├── Places to Visit in India.md
+│   └── Things to Do in Delhi.md
+├── wiki/                     # Structured Markdown travel wiki pages
+│   ├── Asia.md               # Asia continental guide (Tier 1)
+│   ├── Dubai.md              # Dubai city guide (Tier 1)
+│   ├── Japan.md              # Japan country guide (Tier 1)
+│   ├── Singapore.md          # Singapore guide (Tier 1)
+│   ├── India.md              # India travel guide (Tier 2)
+│   ├── Goa.md                # Goa beach guide (Tier 2)
+│   ├── Kerala.md             # Kerala backwaters guide (Tier 2)
+│   ├── Maharashtra.md        # Maharashtra state guide (Tier 2)
+│   ├── Manali.md             # Manali hill station guide (Tier 2)
+│   ├── Mumbai.md             # Mumbai financial capital guide (Tier 2)
+│   ├── Top Indian Places to Visit.md (Tier 2)
+│   ├── Delhi.md              # Delhi capital guide (Tier 3)
+│   └── index.md              # Travel Wiki Master Index
 ├── db/
 │   └── schema.sql            # PostgreSQL schema with tsvector, tier column, & graph tables
 ├── src/
 │   ├── db.js                 # PostgreSQL connection pool & schema bootstrapper
-│   ├── parser.js             # Markdown, tag, tier & [[wikilink]] parser
+│   ├── parser.js             # Ignored link filter, tier parser & [[wikilink]] graph parser
 │   ├── indexer.js            # Graph indexer & tsvector generator
 │   ├── mcp-tools.js          # Tier-filtered MCP tools (search, lookup, graph)
 │   └── server.js             # Express HTTP/SSE & Stdio MCP server
-├── Dockerfile                # Docker container configuration
 ├── render.yaml               # Render Infrastructure blueprint (MCP 1, MCP 2, MCP 3)
-├── package.json              # Dependencies and scripts
-└── .env.example              # Environment variables template
+└── package.json              # Dependencies and scripts
 ```
-
----
-
-## 🚀 Quick Start (Local Development)
-
-### 1. Install Dependencies
-
-```bash
-npm install
-```
-
-### 2. Configure Environment Variables
-
-Create a `.env` file:
-
-```env
-PORT=3000
-ALLOWED_TIERS=1,2,3
-DATABASE_URL=postgres://postgres:postgres@localhost:5432/portfolio_wiki
-```
-
-### 3. Run Knowledge Graph Indexer
-
-```bash
-npm run index
-```
-
-### 4. Start MCP Server
-
-```bash
-npm start
-```
-
----
-
-## 🤖 Connecting to Claude (Live Custom Connectors)
-
-- **Travel Overview Connector (MCP 1)**: `https://llm-portfolio-mcp1.onrender.com/sse`
-- **Destination Guides Connector (MCP 2)**: `https://llm-portfolio-mcp2.onrender.com/sse`
-- **Full Travel & Raw Sources Connector (MCP 3)**: `https://llm-portfolio-mcp3.onrender.com/sse`

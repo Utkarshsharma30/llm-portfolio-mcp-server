@@ -2,6 +2,20 @@ import matter from 'gray-matter';
 import path from 'path';
 
 /**
+ * List of unnecessary graph link targets to filter out (e.g. readme, licence, index, etc.)
+ */
+const IGNORED_LINK_SLUGS = new Set([
+  'readme',
+  'license',
+  'licence',
+  'index',
+  'quick-start',
+  'log',
+  'changelog',
+  'contributing'
+]);
+
+/**
  * Converts a page title or filename to a standardized slug format (e.g. "AI/ML" -> "ai-ml")
  */
 export function slugify(text) {
@@ -54,7 +68,7 @@ export function parseMarkdownFile(fileContent, filePath) {
     data.tags.split(',').forEach(t => tagsSet.add(slugify(t)));
   }
   
-  // Inline hashtags search (#ai-ml, #python)
+  // Inline hashtags search
   const inlineHashtags = content.match(/#([a-zA-Z0-9\-_]+)/g);
   if (inlineHashtags) {
     inlineHashtags.forEach(tag => {
@@ -65,46 +79,47 @@ export function parseMarkdownFile(fileContent, filePath) {
     });
   }
   
-  // Extract Wikilinks: [[target-page]] or [[target-page|Label]]
+  // Extract Wikilinks: [[target-page]] or [[target-page|Label]], filtering out ignored links (readme, index, licence)
   const linksSet = new Set();
   const wikilinkRegex = /\[\[([^\]\|]+)(?:\|[^\]]+)?\]\]/g;
   let match;
   while ((match = wikilinkRegex.exec(content)) !== null) {
     const rawTarget = match[1].trim();
     const targetSlug = slugify(rawTarget);
-    if (targetSlug && targetSlug !== slug) {
+    if (targetSlug && targetSlug !== slug && !IGNORED_LINK_SLUGS.has(targetSlug)) {
       linksSet.add(targetSlug);
     }
   }
   
-  // Extract Markdown relative links: [label](page-name.md)
+  // Extract Markdown relative links: [label](page-name.md), filtering out ignored links
   const mdLinkRegex = /\[[^\]]+\]\(([^)]+\.md)\)/g;
   while ((match = mdLinkRegex.exec(content)) !== null) {
     const targetFile = path.basename(match[1], '.md');
     const targetSlug = slugify(targetFile);
-    if (targetSlug && targetSlug !== slug) {
+    if (targetSlug && targetSlug !== slug && !IGNORED_LINK_SLUGS.has(targetSlug)) {
       linksSet.add(targetSlug);
     }
   }
   
-  // Determine Access Tier (Tier 1: Projects, Tier 2: Skills/Intro, Tier 3: Personal/Contact/Experience)
+  // Determine Access Tier:
+  // Tier 1: Asia countries excluding India (Asia, Dubai, Japan, Singapore)
+  // Tier 2: India and states excluding Delhi (India, Goa, Kerala, Maharashtra, Manali, Mumbai, Agra, Top Indian Places)
+  // Tier 3: Delhi & Full Access (Delhi, Things to Do in Delhi)
   let tier = parseInt(data.tier, 10);
   if (isNaN(tier)) {
-    const isRaw = filePath.includes('raw') || filePath.includes('raw/');
-    if (isRaw || slug === 'experience' || slug === 'log') {
+    const tier3Slugs = ['delhi', 'things-to-do-in-delhi'];
+    const tier2Slugs = [
+      'india', 'goa', 'kerala', 'maharashtra', 'manali', 'mumbai', 
+      'top-indian-places-to-visit', 'agra', 'explore-manali', 
+      'goa-india', 'places-to-visit-in-india'
+    ];
+    
+    if (tier3Slugs.includes(slug)) {
       tier = 3;
+    } else if (tier2Slugs.includes(slug)) {
+      tier = 2;
     } else {
-      const projectSlugs = [
-        'projects', 
-        'pdf-invoice-data-extraction-automation', 
-        'rag-book-assistant', 
-        'markdown-personal-wiki-mcp', 
-        'traffic-flow-prediction', 
-        'cafe-and-university-management-systems', 
-        'ola-data-analysis', 
-        'fun-chat-bot'
-      ];
-      tier = projectSlugs.includes(slug) ? 1 : 2;
+      tier = 1; // Asia countries (Asia, Dubai, Japan, Singapore)
     }
   }
 
