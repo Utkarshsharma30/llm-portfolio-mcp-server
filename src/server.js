@@ -206,14 +206,41 @@ async function startHttpServer() {
   });
 
   // Dedicated SSE endpoint
-  app.get('/sse', handleSseConnection);
+  app.all('/sse', (req, res, next) => {
+    if (req.method === 'GET') {
+      return handleSseConnection(req, res);
+    }
+    if (req.method === 'OPTIONS' || req.method === 'HEAD') {
+      return res.status(200).end();
+    }
+    next();
+  });
 
-  // MCP & OAuth Discovery Endpoints: Return 200 OK confirming NO sign-in is required
-  app.get([
+  // RFC 9728 Protected Resource Metadata endpoint
+  app.all([
+    '/.well-known/oauth-protected-resource',
+    '/.well-known/oauth-protected-resource/*',
+    '*/.well-known/oauth-protected-resource',
+  ], (req, res) => {
+    const baseUrl = getBaseUrl(req);
+    res.status(200).json({
+      resource: baseUrl,
+      authorization_servers: [baseUrl],
+      authentication_required: false,
+      scopes_supported: [],
+      bearer_methods_supported: ['header'],
+      resource_documentation: baseUrl
+    });
+  });
+
+  // RFC 8414 & MCP Discovery Endpoints
+  app.all([
+    '/.well-known/oauth-authorization-server',
+    '/.well-known/oauth-authorization-server/*',
     '/.well-known/mcp-configuration',
     '/.well-known/mcp.json',
-    '/.well-known/oauth-authorization-server',
-    '/.well-known/openid-configuration'
+    '/.well-known/openid-configuration',
+    '*/.well-known/*'
   ], (req, res) => {
     const baseUrl = getBaseUrl(req);
     res.status(200).json({
@@ -221,6 +248,9 @@ async function startHttpServer() {
       authentication_required: false,
       authentication: { type: 'none' },
       issuer: baseUrl,
+      authorization_endpoint: `${baseUrl}/oauth/authorize`,
+      token_endpoint: `${baseUrl}/oauth/token`,
+      registration_endpoint: `${baseUrl}/oauth/register`,
       allowed_tiers: getAllowedTiers(),
       sse_endpoint: `${baseUrl}/sse`,
       messages_endpoint: `${baseUrl}/messages`
@@ -228,7 +258,7 @@ async function startHttpServer() {
   });
 
   // Dynamic Client Registration (RFC 7591) fallback
-  app.post(['/oauth/register', '/register'], (req, res) => {
+  app.all(['/oauth/register', '/register'], (req, res) => {
     res.status(200).json({
       client_id: 'llm_portfolio_mcp_client',
       client_secret: 'llm_portfolio_mcp_secret',
@@ -238,7 +268,7 @@ async function startHttpServer() {
   });
 
   // OAuth Authorization endpoint fallback (Instant redirect)
-  app.get(['/oauth/authorize', '/authorize'], (req, res) => {
+  app.all(['/oauth/authorize', '/authorize'], (req, res) => {
     const { redirect_uri, state } = req.query;
     if (redirect_uri) {
       const targetUrl = new URL(String(redirect_uri));
@@ -250,7 +280,7 @@ async function startHttpServer() {
   });
 
   // OAuth Token Endpoint fallback
-  app.post(['/oauth/token', '/token'], (req, res) => {
+  app.all(['/oauth/token', '/token'], (req, res) => {
     res.status(200).json({
       access_token: 'mcp_access_token_valid',
       token_type: 'Bearer',
