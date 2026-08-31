@@ -112,7 +112,7 @@ Gurudwara Guru Ka Taal
 
 In today’s time, you can visit this place to feel a sense of contentment and peace. Surrounded by lush green gardens, it is a great destination for meditation and self-reflection. It is the aura of devotion that makes you feel incredibly comfortable. Do not forget to witness the awe-inspiring architecture attracting thousands of devotees every year.
 
-**Location:** Chennai – Delhi Hwy, Maharishi Puram Colony, Agra, Uttar Pradesh 282007
+**Location:** National Highway, Maharishi Puram Colony, Agra, Uttar Pradesh 282007
 
 ### 5\. Tomb of Akbar
 

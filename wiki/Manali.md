@@ -241,7 +241,6 @@ Significant spiritual hub with colorful murals, prayer wheels, and Buddha statue
 - **Tip**: Comfortable shoes for uneven terrain
 
 ### To/From Manali
-- **From Delhi**: ~12-14 hours (550-600 km)
 - **From Chandigarh**: ~7-8 hours (300 km)
 - **From Shimla**: ~7-8 hours (250 km)
 - **Nearest Airport**: Bhuntar (Kullu-Manali), ~50 km

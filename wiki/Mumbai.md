@@ -113,7 +113,6 @@ tier: 2
 - [[India]] - Comprehensive India travel guide
 - [[Maharashtra]] - State overview with all attractions
 - [[Goa]] - Coastal destination (2-3 hours from Mumbai)
-- [[Delhi]] - Compare with another major Indian city
 - [[Asia]] - Continental overview
 - [[Top Indian Places to Visit]] - Dataset source (10+ Mumbai attractions)
 - [[index]] - Main wiki index

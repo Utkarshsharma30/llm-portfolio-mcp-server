@@ -248,7 +248,7 @@ Maharashtra has an extensive rail network:
 - **High-speed**: Mumbai-Pune in ~2.5 hours, Mumbai-Nagpur in ~12 hours
 
 ### By Road
-- **National Highways**: NH-3 (Mumbai-Pune), NH-4 (Mumbai-Chennai), NH-6 (Mumbai-Kolkata), NH-8 (Mumbai-Delhi)
+- **National Highways**: NH-3 (Mumbai-Pune), NH-4 (Mumbai-Chennai), NH-6 (Mumbai-Kolkata), NH-8 (Mumbai-Ahmedabad)
 - **State Highways**: Well-connected network
 - **Distance Examples**:
   - Mumbai to Pune: 150 km (3-4 hours)

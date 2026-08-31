@@ -42,9 +42,9 @@ If a place asks for effort to reach, such as Ladakh or the Northeast, give it mo
 
 ## How do you reach these places from India's main international gateways?
 
-Most overseas visitors fly into Delhi, Mumbai, Bengaluru, Chennai or Kochi, then continue by a mix of short domestic flights, trains and private cars with a driver. Delhi is the natural gateway for the north, Rajasthan and the Himalayas. Mumbai suits the west and the caves of Maharashtra. Bengaluru and Chennai open up the south, while Kochi is the easiest entry for Kerala.
+Most overseas visitors fly into Mumbai, Bengaluru, Chennai or Kochi, then continue by a mix of short domestic flights, trains and private cars with a driver. Mumbai suits the west and the caves of Maharashtra. Bengaluru and Chennai open up the south, while Kochi is the easiest entry for Kerala.
 
-A few terms worth knowing before you plan. Delhi is the wider capital territory; New Delhi is the planned central district within it; Old Delhi is the historic walled city. A private car with a driver, arranged for a day or a whole route, is one of the most comfortable ways to cover ground, and it costs far less than a chauffeur would in Europe or North America. Trains remain the most characterful way to travel, with air-conditioned classes that are perfectly comfortable once you know which to book. Autos, sometimes called auto-rickshaws or tuk-tuks, are small three-wheeled taxis best used for short city hops, with app-based taxis as the simpler alternative.
+A private car with a driver, arranged for a day or a whole route, is one of the most comfortable ways to cover ground, and it costs far less than a chauffeur would in Europe or North America. Trains remain the most characterful way to travel, with air-conditioned classes that are perfectly comfortable once you know which to book. Autos, sometimes called auto-rickshaws or tuk-tuks, are small three-wheeled taxis best used for short city hops, with app-based taxis as the simpler alternative.
 
 ## What is the best time to visit India?
 
@@ -70,7 +70,7 @@ Two costs worth planning for separately are internal flights, which are reasonab
 
 Green, unhurried places, like the coffee hills of Coorg, reset your pace after the cities.
 
-These are the places that reset your pace. Green, quiet and unhurried, they suit the start or end of a trip, or a mid-journey pause when the cities have worn you out. The first time I sent a jet-lagged couple straight to the Kerala backwaters instead of Delhi, they thanked me for a week. A [night on a backwaters houseboat](https://theunboredclub.com/blogs/kerala-backwaters-houseboat) is the gentlest possible start.
+These are the places that reset your pace. Green, quiet and unhurried, they suit the start or end of a trip, or a mid-journey pause when the cities have worn you out. The first time I sent a jet-lagged couple straight to the Kerala backwaters, they thanked me for a week. A [night on a backwaters houseboat](https://theunboredclub.com/blogs/kerala-backwaters-houseboat) is the gentlest possible start.
 
 - **Alleppey and the Kerala backwaters.** A network of palm-lined canals and lagoons in the southern state of Kerala, best seen from a converted rice barge called a houseboat. About ninety minutes by car from Kochi airport. One or two nights is plenty.
 - **Munnar.** Rolling tea hills in Kerala's high country, cool and misty even in the heat, around four hours by road from Kochi. Ideal paired with the backwaters for a gentle Kerala week.
@@ -88,10 +88,10 @@ Places among the oldest continuously lived spaces on earth, like the Meenakshi t
 
 You do not need to be religious to feel these places. They are among the oldest continuously lived spaces on earth, and something about the ritual, the water and the sound tends to move people who arrive expecting nothing. I have watched sceptical travellers go silent at the evening ceremony in Varanasi. Our [guide to Varanasi](https://theunboredclub.com/blogs/varanasi-guide) explains where to watch it and when to arrive.
 
-- **Varanasi.** One of the world's oldest living cities, on the river Ganges in the northern state of Uttar Pradesh. Dawn boat rides past the ghats, the stone steps leading down to the water, and the evening aarti, a fire and light ceremony, are unforgettable. Fly in from Delhi in around ninety minutes. Two nights minimum.
-- **Rishikesh.** Where the Ganges leaves the Himalayas, a centre of yoga and quieter riverside ashrams, which are spiritual guesthouses. About a five to six hour drive, or a short flight to Dehradun, from Delhi.
+- **Varanasi.** One of the world's oldest living cities, on the river Ganges in the northern state of Uttar Pradesh. Dawn boat rides past the ghats, the stone steps leading down to the water, and the evening aarti, a fire and light ceremony, are unforgettable. Reached by flight or fast train. Two nights minimum.
+- **Rishikesh.** Where the Ganges leaves the Himalayas, a centre of yoga and quieter riverside ashrams, which are spiritual guesthouses. About a short flight or drive from Dehradun.
 - **Bodh Gaya.** The place where the Buddha is said to have found enlightenment, in the state of Bihar. A calm pilgrimage town with monasteries built by many Buddhist nations. Reached via Gaya airport or by train.
-- **Amritsar and the Golden Temple.** The spiritual heart of the Sikh faith in the northern state of Punjab, where a gilded shrine sits in a still pool. Everyone, regardless of background, is fed free in the community kitchen, or langar, which is widely described as the largest free kitchen in the world. Fly from Delhi in about an hour.
+- **Amritsar and the Golden Temple.** The spiritual heart of the Sikh faith in the northern state of Punjab, where a gilded shrine sits in a still pool. Everyone, regardless of background, is fed free in the community kitchen, or langar, which is widely described as the largest free kitchen in the world. Reached easily by air or train.
 - **Madurai.** An ancient temple city in Tamil Nadu built around the towering Meenakshi temple, its gateways covered in thousands of painted figures. A window into living south Indian devotion.
 - **Pushkar.** A small town in Rajasthan wrapped around a sacred lake and its ghats, gentle by day and atmospheric at dusk. An easy add to a Rajasthan route.
 - **Tiruvannamalai.** A quiet temple town in Tamil Nadu beneath the sacred hill of Arunachala, drawing seekers and walkers who circle the mountain on foot. Deeply peaceful and largely undiscovered by overseas visitors.
@@ -104,10 +104,10 @@ The grand ones reward arriving early and staying late, like the carved temples o
 
 These are the grand ones, the architecture and cities that stop you mid-sentence. Many appear on every list of India attractions for good reason, but the trick is to arrive early, stay late and let them breathe.
 
-- **Agra and the Taj Mahal.** The white marble mausoleum needs no introduction, but it rewards a sunrise visit and a second look from the gardens across the river. Around three to four hours by road, or a fast train, from Delhi.
+- **Agra and the Taj Mahal.** The white marble mausoleum needs no introduction, but it rewards a sunrise visit and a second look from the gardens across the river. Reached by road or fast train.
 - **Udaipur.** A city of lakes and palaces in southern Rajasthan, often called the most romantic in India. Slow, reflective and beautiful at golden hour. Fly in, or arrive by road on a Rajasthan loop.
 - **Jodhpur.** The blue city, a sea of indigo houses below the enormous Mehrangarh fort. The old town below the walls is a maze worth getting lost in.
-- **Jaipur.** The pink city and the usual third point of the Golden Triangle, the classic Delhi, Agra and Jaipur route. Strong on forts, crafts and living heritage.
+- **Jaipur.** The pink city and the classic entry point of Rajasthan. Strong on forts, crafts and living heritage.
 - **Khajuraho.** A group of intricately carved medieval temples in the state of Madhya Pradesh, famous for their sculpture. Quiet, remarkable and reached by a short flight or train.
 - **Konark.** The Sun Temple on the coast of Odisha in eastern India, shaped as a colossal stone chariot. Pair it with the nearby seaside town of Puri.
 - **Ellora and Ajanta.** Rock-cut cave temples and monasteries in Maharashtra, carved by hand over centuries. Among the great achievements of Indian art, reached from Aurangabad, itself a short flight from Mumbai.
@@ -121,7 +121,7 @@ The high, remote places need careful timing and acclimatisation, best placed in 
 
 For travellers who want altitude, movement and a little effort. These places sit high, remote or wild, and they need careful timing and acclimatisation. I always place them in a second week rather than a jet-lagged first day.
 
-- **Leh and Ladakh.** A high desert of monasteries and moonscapes in the far north. Leh town sits at about 3,500 metres, and the surrounding region climbs far higher, so the altitude is real. Fly in from Delhi and rest for two days before doing anything strenuous. Open roughly late spring to early autumn.
+- **Leh and Ladakh.** A high desert of monasteries and moonscapes in the far north. Leh town sits at about 3,500 metres, and the surrounding region climbs far higher, so the altitude is real. Fly in and rest for two days before doing anything strenuous. Open roughly late spring to early autumn.
 - **Nubra Valley.** Beyond Leh, over one of the world's highest motorable passes, a valley of dunes, cold rivers and villages. A day or two adds real texture to a Ladakh trip.
 - **Spiti Valley.** A cold desert of cliff-top monasteries in Himachal Pradesh, harder to reach than Ladakh and all the more rewarding for it. For confident travellers with time.
 - **Valley of Flowers.** A UNESCO-listed high Himalayan meadow in Uttarakhand that blooms during the monsoon months, reached on foot over a day or two of walking. A rare reason to travel India in the wet season.
@@ -137,7 +137,6 @@ Some cities are worth visiting for the table alone, and eating well and safely a
 
 India is not one cuisine but dozens, and some cities are worth visiting for the table alone. These reward a food walk with someone who knows the lanes, and a willingness to eat where the queues are longest. A quick note for first-time visitors: eating well and eating safely are not opposites. Busy stalls with high turnover, freshly cooked hot food and bottled or filtered water make street food a joy rather than a risk. There is a regional map of all of it in our [guide to Indian cuisine](https://theunboredclub.com/blogs/indian-cuisine-regional-guide).
 
-- **Old Delhi.** The historic walled city inside the capital, where Mughal-era kitchens still turn out kebabs, breads and sweets in lanes barely wide enough to pass. Best explored on a guided morning walk.
 - **Lucknow.** The refined old capital of Uttar Pradesh, home to slow-cooked Awadhi cooking, delicate kebabs and courtly manners. An underrated stop for eaters.
 - **Kolkata.** The cultural capital of the east in West Bengal, generous with sweets, fish, street snacks and old coffee houses. A city that takes food and conversation seriously.
 - **Chettinad.** A region of grand merchant mansions in rural Tamil Nadu with one of the country's most complex spice traditions. Stay in a restored mansion and eat where the recipes were born.
@@ -241,7 +240,7 @@ The most common mistake is trying to see too much. A list of fifty places invite
 
 ### What are the best places to visit in India for a first-time visitor?
 
-For a first trip, most overseas visitors do well with a compact, well-known spine such as Delhi, Agra, Jaipur and Udaipur in the north, or Kochi, the Kerala backwaters and Munnar in the south. Add one soulful contrast, such as Varanasi or Rishikesh, and you have a rich, manageable route.
+For a first trip, most overseas visitors do well with a compact, well-known spine such as Agra, Jaipur and Udaipur in the north, or Kochi, the Kerala backwaters and Munnar in the south. Add one soulful contrast, such as Varanasi or Rishikesh, and you have a rich, manageable route.
 
 ### How many days do you need in India for a first trip?
 
@@ -249,7 +248,7 @@ Two weeks lets you see four to six places with real depth: one anchor region plu
 
 ### How do you plan a trip to India from the UK, US or Australia?
 
-Fly into a gateway city that matches your region (Delhi for the north, Kochi for Kerala), sort your visa in advance, and build a route around two or three moods rather than a long checklist. Use flights for long hops, trains for medium distances and a private driver within a region. A local curator can arrange the whole route for you.
+Fly into a gateway city that matches your region (Mumbai for the west, Kochi for Kerala), sort your visa in advance, and build a route around two or three moods rather than a long checklist. Use flights for long hops, trains for medium distances and a private driver within a region. A local curator can arrange the whole route for you.
 
 ### Is it better to fly, take a train or hire a driver in India?
 

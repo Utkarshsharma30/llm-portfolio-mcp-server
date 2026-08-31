@@ -66,7 +66,6 @@ Asia is divided into several distinct regions, each with its own unique characte
 - **Highlights**: Religious diversity, rich history, diverse landscapes
 - **Key Countries in this Wiki**:
   - [[India]] - Comprehensive guide with 50+ destinations
-  - [[Delhi]] - Capital city with 20+ attractions
   - [[Mumbai]] - Financial capital with 10+ attractions
   - [[Goa]] - Beach paradise with 15+ beaches
   - [[wiki/Kerala]] - "God's Own Country" with 25+ attractions
@@ -99,7 +98,7 @@ Asia is home to some of the world's most visited and exciting cities:
 | 9 | [[Istanbul]] | Turkey | 13M+ | UNESCO World Heritage Old City, sacred to three religions |
 | 10 | [[Kuala Lumpur]] | Malaysia | 12M+ | Modern capital with multicultural influences |
 
-**From this Wiki**: [[Mumbai]] (10+ attractions), [[Delhi]] (20+ attractions)
+**From this Wiki**: [[Mumbai]] (10+ attractions)
 
 ---
 
@@ -146,7 +145,6 @@ Asia's busiest airports (2026):
 - **Seoul (ICN)** - Incheon International Airport
 - **Tokyo (NRT, HND)** - Narita & Haneda Airports
 - **Jakarta (CGK)** - Soekarno-Hatta International Airport
-- **New Delhi (DEL)** - Indira Gandhi International Airport ([[India]])
 - **Mumbai (BOM)** - Chhatrapati Shivaji Maharaj International Airport ([[Mumbai]])
 - **Bangalore (BLR)** - Kempegowda International Airport
 
@@ -214,7 +212,7 @@ Asia's busiest airports (2026):
 - **Jeepneys**: Philippines
 - **Songthaews**: Thailand
 - **Marshrutkas**: Ex-Soviet states
-- **Metro systems**: Modern systems in many major cities (Tokyo, Shanghai, Seoul, Singapore, Delhi, Mumbai)
+- **Metro systems**: Modern systems in many major cities (Tokyo, Shanghai, Seoul, Singapore, Mumbai)
 
 ---
 
@@ -400,7 +398,7 @@ Asia experiences virtually every type of natural disaster:
 ### Multi-Country Journeys
 1. **Silk Road Adventure**: China → Central Asia → Middle East
 2. **Trans-Siberian Railway**: Moscow → Vladivostok → Beijing
-3. **Istanbul to New Delhi Overland**: Turkey → Iran → Pakistan → India
+3. **Istanbul to Northern India Overland**: Turkey → Iran → Pakistan → India
 4. **Southeast Asia Loop**: Thailand → Cambodia → Vietnam → Laos → Myanmar
 5. **East Asia Grand Tour**: Japan → South Korea → China → Taiwan
 
@@ -417,7 +415,6 @@ Asia experiences virtually every type of natural disaster:
 
 ### South Asia Focus (Detailed Guides Available)
 - **[[India]]** - Comprehensive guide with 50+ destinations
-- **[[Delhi]]** - Capital city with 20+ attractions
 - **[[Mumbai]]** - Financial capital with 10+ attractions  
 - **[[Goa]]** - Beach paradise with 15+ beaches
 - **[[wiki/Kerala]]** - "God's Own Country" with backwaters

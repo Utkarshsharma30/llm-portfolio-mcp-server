@@ -27,23 +27,7 @@ The dataset is structured to help travelers plan their itineraries based on regi
 ## 🗺️ Attractions by Zone
 
 ### Zone 1: North India (89 Attractions)
-**States**: Delhi, Punjab, Haryana, Himachal Pradesh, Jammu & Kashmir, Uttarakhand, Uttar Pradesh
-
-#### Delhi (20+ Attractions)
-| # | Attraction | Type | Rating | Fee (₹) | Time | Best Time |
-|---|------------|------|--------|----------|------|-----------|
-| 1 | Red Fort | UNESCO Site | ⭐ 4.8 | 35/550 | 2-3 hrs | Oct-Mar |
-| 2 | Qutub Minar | UNESCO Site | ⭐ 4.7 | 30/500 | 1-2 hrs | Oct-Mar |
-| 3 | Humayun's Tomb | UNESCO Site | ⭐ 4.7 | 30/500 | 1-2 hrs | Oct-Mar |
-| 4 | Jama Masjid | Mosque | ⭐ 4.6 | Free | 1 hr | Oct-Mar |
-| 5 | Lotus Temple | Temple | ⭐ 4.5 | Free | 1 hr | Year-round |
-| 6 | India Gate | Monument | ⭐ 4.6 | Free | 30 min | Year-round |
-| 7 | Akshardham Temple | Temple | ⭐ 4.8 | 170/270 | 2-3 hrs | Year-round |
-| 8 | Chandni Chowk | Market | ⭐ 4.5 | Free | 2-3 hrs | Year-round |
-| 9 | Raj Ghat | Memorial | ⭐ 4.4 | Free | 30 min | Year-round |
-| 10 | Purana Qila | Fort | ⭐ 4.4 | 20/200 | 1-2 hrs | Oct-Mar |
-
-**Related**: [[Delhi]] - Complete Delhi travel guide
+**States**: Punjab, Haryana, Himachal Pradesh, Jammu & Kashmir, Uttarakhand, Uttar Pradesh
 
 #### Agra (5 Attractions)
 | # | Attraction | Type | Rating | Fee (₹) | Time | Best Time |
@@ -211,11 +195,10 @@ Based on visitor ratings from the dataset:
 3. **Ellora Caves, Maharashtra** (⭐ 4.8) - Multi-religious cave temples
 4. **Sai Baba Temple, Shirdi** (⭐ 4.8) - Spiritual pilgrimage site
 5. **Amber Fort, Jaipur** (⭐ 4.8) - Rajput royal fortress
-6. **Akshardham Temple, Delhi** (⭐ 4.8) - Modern Hindu temple complex
-7. **Siddhivinayak Temple, Mumbai** (⭐ 4.8) - Famous Ganesha temple
-8. **Trimbakeshwar Temple, Nashik** (⭐ 4.7) - One of 12 Jyotirlingas
-9. **Padmanabhaswamy Temple, Thiruvananthapuram** (⭐ 4.7) - Wealthiest temple
-10. **Hawa Mahal, Jaipur** (⭐ 4.6) - Palace of Winds
+6. **Siddhivinayak Temple, Mumbai** (⭐ 4.8) - Famous Ganesha temple
+7. **Trimbakeshwar Temple, Nashik** (⭐ 4.7) - One of 12 Jyotirlingas
+8. **Padmanabhaswamy Temple, Thiruvananthapuram** (⭐ 4.7) - Wealthiest temple
+9. **Hawa Mahal, Jaipur** (⭐ 4.6) - Palace of Winds
 
 ---
 
@@ -228,25 +211,22 @@ India has **28 UNESCO World Heritage Sites** covered in this dataset:
 1. Taj Mahal (Agra)
 2. Agra Fort (Agra)
 3. Fatehpur Sikri (Agra)
-4. Red Fort (Delhi)
-5. Qutub Minar (Delhi)
-6. Humayun's Tomb (Delhi)
-7. Ajanta Caves (Maharashtra)
-8. Ellora Caves (Maharashtra)
-9. Elephanta Caves (Maharashtra)
-10. Chhatrapati Shivaji Terminus (Mumbai)
-11. Jaipur City (Rajasthan)
-12. Jantar Mantar (Jaipur)
-13. Keoladeo National Park (Bharatpur)
-14. Khajuraho Group of Monuments (Madhya Pradesh)
-15. Sanchi Stupa (Madhya Pradesh)
-16. Mahabodhi Temple (Bodh Gaya)
-17. Sun Temple (Konark)
-18. Mahabalipuram Group of Monuments
-19. Hampi Group of Monuments
-20. Pattadakal Group of Monuments
-21. Churches and Convents of Goa
-22. Great Living Chola Temples
+4. Ajanta Caves (Maharashtra)
+5. Ellora Caves (Maharashtra)
+6. Elephanta Caves (Maharashtra)
+7. Chhatrapati Shivaji Terminus (Mumbai)
+8. Jaipur City (Rajasthan)
+9. Jantar Mantar (Jaipur)
+10. Keoladeo National Park (Bharatpur)
+11. Khajuraho Group of Monuments (Madhya Pradesh)
+12. Sanchi Stupa (Madhya Pradesh)
+13. Mahabodhi Temple (Bodh Gaya)
+14. Sun Temple (Konark)
+15. Mahabalipuram Group of Monuments
+16. Hampi Group of Monuments
+17. Pattadakal Group of Monuments
+18. Churches and Convents of Goa
+19. Great Living Chola Temples
 
 #### Natural Sites (6)
 1. Sundarbans National Park (West Bengal)
@@ -281,7 +261,7 @@ India has **28 UNESCO World Heritage Sites** covered in this dataset:
 6. **Kanha, Madhya Pradesh** - Inspiration for Jungle Book
 7. **Periyar, Kerala** - Elephant safari, boat rides
 8. **Gir, Gujarat** - Last habitat of Asiatic lions
-9. **Sariska, Rajasthan** - Tiger reserve near Delhi
+9. **Sariska, Rajasthan** - Tiger reserve in Rajasthan
 10. **Dudhwa, Uttar Pradesh** - Rhinos, tigers, swamp deer
 
 ### Forts & Palaces (50 Attractions)
@@ -291,24 +271,23 @@ India has **28 UNESCO World Heritage Sites** covered in this dataset:
 
 **Karnataka**: Mysore Palace, Bangalore Palace, Hampi Forts, Badami Caves
 
-**Delhi & Agra**: Red Fort, Agra Fort, Jama Masjid, Purana Qila
+**Agra**: Agra Fort, Taj Mahal Complex
 
 ### Museums & Galleries (20 Attractions)
 1. Indian Museum, Kolkata
-2. National Museum, Delhi
-3. Chhatrapati Shivaji Maharaj Vastu Sangrahalaya, Mumbai
-4. Salar Jung Museum, Hyderabad
-5. Government Museum, Chennai
-6. Napier Museum, Thiruvananthapuram
-7. Prince of Wales Museum, Mumbai
-8. National Gallery of Modern Art, Delhi/Mumbai
+2. Chhatrapati Shivaji Maharaj Vastu Sangrahalaya, Mumbai
+3. Salar Jung Museum, Hyderabad
+4. Government Museum, Chennai
+5. Napier Museum, Thiruvananthapuram
+6. Prince of Wales Museum, Mumbai
+7. National Gallery of Modern Art, Mumbai
 
 ---
 
 ## 🗓️ Best Time to Visit by Region
 
 ### North India
-- **Winter (Oct-Mar)**: Ideal for Delhi, Rajasthan, Uttar Pradesh
+- **Winter (Oct-Mar)**: Ideal for Rajasthan, Uttar Pradesh
 - **Summer (Apr-Jun)**: Good for hill stations (Shimla, Manali, Nainital)
 - **Monsoon (Jul-Sep)**: Lush greenery, but avoid travel in plains
 
@@ -332,25 +311,25 @@ India has **28 UNESCO World Heritage Sites** covered in this dataset:
 ## 🎒 Itinerary Planning by Duration
 
 ### 1 Week (Single Region)
-- **Rajasthan Golden Triangle**: Delhi - Jaipur - Agra
+- **Rajasthan Loop**: Jaipur - Agra - Udaipur
 - **Kerala Backwaters**: Kochi - Munnar - Alappuzha - Kovalam
 - **Goa Beach Holiday**: North Goa - South Goa
 - **Himalayan Retreat**: Shimla - Manali - Dharamshala
 
 ### 2 Weeks (Two Regions)
-- **North + Rajasthan**: Delhi - Agra - Jaipur - Jodhpur - Udaipur
+- **North + Rajasthan**: Agra - Jaipur - Jodhpur - Udaipur
 - **South India**: Chennai - Mahabalipuram - Pondicherry - Madurai - Kerala
 - **West Coast**: Mumbai - Goa - Kerala
-- **Cultural Heritage**: Delhi - Varanasi - Khajuraho - Orchha - Gwalior
+- **Cultural Heritage**: Varanasi - Khajuraho - Orchha - Gwalior
 
 ### 3 Weeks (Multiple Regions)
-- **Grand Tour of North**: Delhi - Agra - Jaipur - Varanasi - Kathmandu (Nepal)
+- **Grand Tour of North**: Agra - Jaipur - Varanasi - Kathmandu (Nepal)
 - **South & West**: Mumbai - Goa - Kerala - Tamil Nadu
-- **Himalayas + Plains**: Delhi - Shimla - Manali - Dharamshala - Amritsar
+- **Himalayas + Plains**: Shimla - Manali - Dharamshala - Amritsar
 - **Temple Trail**: Chennai - Kanchipuram - Madurai - Rameswaram - Tirupati
 
 ### 4+ Weeks (Comprehensive)
-- **Complete India**: Delhi - Rajasthan - Varanasi - Kolkata - Northeast - South - West
+- **Complete India**: Rajasthan - Varanasi - Kolkata - Northeast - South - West
 - **Coastal Journey**: Goa - Kerala - Tamil Nadu - Andhra Pradesh - Odisha
 - **Himalayan Circuit**: Jammu - Kashmir - Ladakh - Himachal Pradesh - Uttarakhand
 
@@ -403,7 +382,6 @@ India has **28 UNESCO World Heritage Sites** covered in this dataset:
 - [[Mumbai]] - Financial capital with 10+ attractions
 - [[Goa]] - Beach paradise with 15+ beaches
 - [[wiki/Kerala]] - "God's Own Country" with 25+ attractions
-- [[Delhi]] - Capital city with 20+ attractions
 - [[Manali]] - Himalayan hill station
 
 ### Continental Context

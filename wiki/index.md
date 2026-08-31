@@ -6,7 +6,7 @@ Welcome to the Travel Wiki - your comprehensive guide to exploring incredible de
 
 - [[Asia]] - Complete travel guide for the world's largest continent (4.6B people, 7 regions)
   - Regional breakdown: Caucasus, Central Asia, East Asia, Middle East, Russia, **South Asia**, Southeast Asia
-  - Major cities: Bangkok, Hong Kong, **Dubai**, **Tokyo**, **Mumbai**, **Delhi**, **Singapore**, Seoul
+  - Major cities: Bangkok, Hong Kong, **Dubai**, **Tokyo**, **Mumbai**, **Singapore**, Seoul
   - Transportation, safety, health, cultural guidance
 
 ## 📍 Regions & Countries
@@ -16,7 +16,6 @@ Welcome to the Travel Wiki - your comprehensive guide to exploring incredible de
 
 ### South Asia (Detailed Coverage)
 - [[India]] - Comprehensive guide with 50+ destinations organized by mood
-- [[Delhi]] - Capital city with 20+ attractions (UNESCO sites, markets, food)
 - [[Mumbai]] - Financial capital with 10+ attractions (Gateway of India, Marine Drive, etc.)
 - [[Goa]] - Beach paradise with 15+ beaches and Portuguese heritage
 - [[wiki/Kerala]] - "God's Own Country" with backwaters, houseboats, and Ayurveda
@@ -45,7 +44,6 @@ Welcome to the Travel Wiki - your comprehensive guide to exploring incredible de
 ## 🗺️ Indian States & Cities
 
 ### Northern India
-- [[Delhi]] - The vibrant capital with historic monuments and modern energy
 - [[Manali]] - Himalayan paradise for nature lovers and adventure seekers
 - [[Agra]] - Home to the iconic Taj Mahal
 - [[Jaipur]] - The pink city of Rajasthan
@@ -87,7 +85,6 @@ Welcome to the Travel Wiki - your comprehensive guide to exploring incredible de
 - **Sri Lanka** - Island paradise
 
 ### City Guides
-- [[Delhi]] - 20+ attractions including Red Fort, Qutub Minar, India Gate, Lotus Temple
 - [[Mumbai]] - Gateway of India, Marine Drive, Elephanta Caves, Siddhivinayak Temple
 - **Kolkata** - Victoria Memorial, Howrah Bridge, Indian Museum
 - **Chennai** - Marina Beach, Kapaleeshwarar Temple
@@ -114,7 +111,7 @@ Welcome to the Travel Wiki - your comprehensive guide to exploring incredible de
 
 ### By Duration
 - **1 Week**: One region done well (e.g., Rajasthan OR Kerala)
-- **10 Days**: Two connected regions (e.g., Delhi + Rajasthan)
+- **10 Days**: Two connected regions (e.g., Jaipur + Rajasthan)
 - **2 Weeks**: Four to six places with depth (e.g., North loop + South)
 - **3+ Weeks**: Multiple regions with deep exploration
 
@@ -191,10 +188,6 @@ Welcome to the Travel Wiki - your comprehensive guide to exploring incredible de
   - Best times, activities, places to visit, travel tips
   - Source: Exoticamp.com
 
-- [[Delhi]] - Comprehensive Delhi guide
-  - Historical landmarks, UNESCO sites, food scene
-  - Source: DistantJourneys.co.uk
-
 - [[India]] - 50 Places to Visit (First-Time Visitor's Guide)
   - Organized by mood: slow, spiritual, speechless, thrilling, foodie, remote, craft
   - Practical planning advice, budgets, itineraries
@@ -214,7 +207,7 @@ Welcome to the Travel Wiki - your comprehensive guide to exploring incredible de
 ### How to Use This Wiki
 1. Start with [[Asia]] for continental context
 2. Navigate to [[India]], [[Japan]], [[Singapore]], or [[Dubai]] for country-specific information
-3. Explore individual [[Delhi]], [[Mumbai]], [[Goa]], [[Kerala]], [[Manali]] for detailed Indian guides
+3. Explore individual [[Mumbai]], [[Goa]], [[Kerala]], [[Manali]] for detailed Indian guides
 4. Use the [[Top Indian Places to Visit]] dataset for attraction-specific details
 5. Follow wikilinks (`[[Page Name]]`) to jump between related topics
 
